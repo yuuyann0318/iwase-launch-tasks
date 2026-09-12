@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>岩瀬さんローンチ 全体タスクマップ</title>
+<style>
+:root{
+  --navy:#101828;
+  --navy-2:#1B2A4A;
+  --gold:#C9A227;
+  --gold-soft:#E7CE72;
+  --gold-ink:#8A6E13;
+  --red:#DC2626;
+  --red-ink:#A11B1B;
+  --blue:#2563EB;
+  --blue-ink:#1D4ED8;
+  --green:#16A34A;
+  --green-ink:#0F7A37;
+  --purple:#7C3AED;
+  --purple-ink:#5B21B6;
+  --orange:#EA580C;
+  --orange-ink:#B3430A;
+  --gray:#5B6472;
+  --ink:#182230;
+  --ink-2:#475467;
+  --line:#E4E7EC;
+  --bg:#FFFFFF;
+  --bg-2:#F7F8FA;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",Meiryo,sans-serif;
+  font-size:16px;
+  line-height:1.9;
+  letter-spacing:.02em;
+  overflow-x:hidden;
+}
+svg{max-width:100%;}
+p{margin:0 0 1em;}
+ul{margin:0;padding:0;list-style:none;}
+
+/* ============ レイアウト ============ */
+.wrap{width:100%;max-width:980px;margin:0 auto;padding:0 16px;}
+.section{padding:56px 0 8px;}
+.band{background:var(--bg-2);}
+
+/* ============ ヒーロー ============ */
+.hero{
+  position:relative;
+  background:
+    radial-gradient(1100px 520px at 18% -10%, #24365F 0%, rgba(36,54,95,0) 62%),
+    radial-gradient(900px 480px at 92% 8%, #2B2138 0%, rgba(43,33,56,0) 60%),
+    linear-gradient(170deg,#0B1220 0%,#101828 46%,#070B13 100%);
+  color:#fff;
+  overflow:hidden;
+  border-bottom:3px solid var(--gold);
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:repeating-linear-gradient(0deg, rgba(255,255,255,.045) 0px, rgba(255,255,255,.045) 1px, rgba(0,0,0,0) 1px, rgba(0,0,0,0) 4px);
+  opacity:.55;pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(120% 90% at 50% 40%, rgba(0,0,0,0) 45%, rgba(0,0,0,.72) 100%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:2;padding:64px 16px 52px;max-width:980px;margin:0 auto;}
+.warboard{display:flex;gap:5px;margin-bottom:26px;opacity:.72;flex-wrap:wrap;}
+.warboard span{width:15px;height:10px;border-radius:2px;background:rgba(255,255,255,.2);}
+.warboard span.o{background:#EA580C;opacity:.9;}
+.warboard span.g2{background:#16A34A;opacity:.9;}
+.warboard span.p{background:#7C3AED;opacity:.9;}
+.warboard span.y{background:#C9A227;opacity:.95;}
+.warboard span.r{background:#DC2626;opacity:.9;}
+.warboard span.b{background:#2563EB;opacity:.9;}
+.hero-label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12px;letter-spacing:.2em;font-weight:700;
+  color:var(--gold-soft);border:1px solid rgba(201,162,39,.55);
+  padding:7px 14px;border-radius:999px;background:rgba(201,162,39,.08);
+  line-height:1.4;white-space:nowrap;max-width:100%;
+}
+.hero h1{
+  margin:22px 0 0;
+  font-size:clamp(26px,6.2vw,50px);
+  line-height:1.35;font-weight:800;letter-spacing:.01em;
+  text-shadow:0 2px 24px rgba(0,0,0,.55);
+}
+.hero h1 .accent{
+  display:block;
+  background:linear-gradient(90deg,#F0DDA0 0%,#C9A227 55%,#9C7B12 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{margin-top:18px;font-size:clamp(14px,3.6vw,19px);color:#D6DBE4;line-height:1.85;max-width:44em;}
+.hero-rule{height:1px;background:linear-gradient(90deg,rgba(201,162,39,.9),rgba(201,162,39,0));margin:30px 0 18px;}
+.hero-meta{font-size:13px;color:#9AA4B4;letter-spacing:.05em;line-height:2;}
+.hero-scroll{margin-top:30px;font-size:12px;letter-spacing:.2em;color:#8E99AB;}
+
+/* ============ 目次 ============ */
+.toc{background:#0B1220;color:#C7CFDC;padding:22px 16px 26px;border-bottom:1px solid #1D2739;}
+.toc-inner{max-width:980px;margin:0 auto;}
+.toc-title{font-size:11px;letter-spacing:.24em;color:var(--gold-soft);font-weight:700;margin-bottom:12px;}
+.toc-list{display:flex;flex-wrap:wrap;gap:8px;}
+.toc-list a{
+  display:inline-block;font-size:12.5px;text-decoration:none;color:#C7CFDC;
+  border:1px solid #263149;border-radius:999px;padding:6px 12px;line-height:1.5;
+}
+.toc-list a b{color:var(--gold-soft);font-weight:700;margin-right:5px;}
+
+/* ============ 見出し ============ */
+.chapter{display:flex;align-items:flex-start;gap:14px;margin-bottom:8px;}
+.chapter-no{
+  font-size:clamp(38px,10vw,62px);line-height:.9;font-weight:800;
+  color:transparent;-webkit-text-stroke:1.6px rgba(201,162,39,.85);
+  font-variant-numeric:tabular-nums;flex:none;letter-spacing:-.02em;
+}
+.chapter-txt{padding-top:4px;min-width:0;}
+/* ★11px の小さな文字なのでコントラスト比 4.5:1 以上になる濃い金にする（#C9A227 は 2.42:1 で不足） */
+.chapter-kicker{font-size:11px;letter-spacing:.2em;color:#7A6010;font-weight:700;margin:0;}
+h2{margin:2px 0 0;font-size:clamp(19px,4.6vw,28px);line-height:1.45;font-weight:800;letter-spacing:.01em;}
+.lead{font-size:clamp(14.5px,3.6vw,17px);color:var(--ink-2);line-height:1.95;margin:14px 0 24px;}
+h3{margin:34px 0 12px;font-size:clamp(16px,4vw,20px);font-weight:800;line-height:1.55;padding-left:12px;border-left:4px solid var(--gold);}
+h4.sub{margin:26px 0 10px;font-size:clamp(15px,3.8vw,17.5px);font-weight:800;line-height:1.6;}
+.hr{height:1px;background:var(--line);margin:44px 0 0;}
+
+/* ============ 汎用カード ============ */
+.grid{display:grid;gap:12px;}
+.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+.g3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr));}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+.g6{grid-template-columns:repeat(3,minmax(0,1fr));}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 15px;box-shadow:0 1px 2px rgba(16,24,40,.05);}
+.card h4{margin:0 0 8px;font-size:15.5px;font-weight:800;line-height:1.55;}
+.card p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.85;}
+.card p + p{margin-top:8px;}
+
+/* 数字カード */
+.numcard{
+  background:linear-gradient(160deg,#12203A 0%,#101828 100%);
+  color:#fff;border-radius:var(--radius);padding:18px 15px;
+  border:1px solid rgba(201,162,39,.28);position:relative;overflow:hidden;
+}
+.numcard::after{content:"";position:absolute;right:-24px;top:-24px;width:80px;height:80px;border-radius:50%;background:rgba(201,162,39,.1);}
+.numcard .k{font-size:12px;letter-spacing:.12em;color:var(--gold-soft);font-weight:700;margin:0;position:relative;z-index:1;}
+.numcard .v{font-size:clamp(21px,5vw,27px);font-weight:800;line-height:1.35;margin:6px 0 0;letter-spacing:0;position:relative;z-index:1;}
+.numcard .v.sm{font-size:clamp(17px,4.2vw,21px);letter-spacing:-.02em;}
+.numcard .n{font-size:12.5px;color:#A9B3C4;margin:6px 0 0;line-height:1.7;position:relative;z-index:1;}
+
+/* バッジ */
+.badge{display:inline-block;font-size:11.5px;font-weight:700;line-height:1.6;padding:2px 8px;border-radius:6px;background:#FFF4D6;color:#755C0E;border:1px solid #EFD98F;margin-left:4px;vertical-align:middle;white-space:nowrap;}
+.badge.chk{background:#FFF1F1;color:#A11B1B;border-color:#F3C9C9;}
+.badge.est{background:#EEF4FF;color:#1D4ED8;border-color:#C9D9F8;}
+.badge.src{background:#F2F4F7;color:#5B6373;border-color:#DDE1E7;}
+.badge.now{background:#FFEDD5;color:#8A3208;border-color:#FCB176;}
+.note{background:#FFFBEF;border:1px solid #F0E3B8;border-radius:10px;padding:12px 14px;font-size:13.5px;color:#6B5A16;line-height:1.85;margin-top:14px;}
+.note b{color:#5A4A0F;}
+.warn{background:#FFF5F5;border:1px solid #F3C9C9;border-left:5px solid var(--red);border-radius:10px;padding:14px 15px;margin-top:16px;}
+.warn .wt{font-size:13px;font-weight:800;color:var(--red-ink);letter-spacing:.04em;margin:0 0 8px;}
+.warn p{margin:0;font-size:13.8px;color:#7A2222;line-height:1.9;}
+.warn ul{margin-top:8px;}
+.warn li{position:relative;padding-left:20px;font-size:13.8px;color:#7A2222;line-height:1.85;margin-bottom:5px;}
+.warn li::before{content:"";position:absolute;left:4px;top:10px;width:7px;height:7px;border-radius:2px;background:var(--red);transform:rotate(45deg);}
+.info{background:#F4F8FF;border:1px solid #D3E2FB;border-left:5px solid var(--blue);border-radius:10px;padding:14px 15px;margin-top:16px;}
+.info .wt{font-size:13px;font-weight:800;color:var(--blue-ink);letter-spacing:.04em;margin:0 0 8px;}
+.info p{margin:0;font-size:13.8px;color:#1E3A6B;line-height:1.9;}
+.info p + p{margin-top:7px;}
+
+/* 図版枠 */
+.fig{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 12px 12px;margin:18px 0 8px;}
+.fig.c{text-align:center;}
+.fig svg{display:block;height:auto;margin:0 auto;}
+.fig-cap{font-size:12.5px;color:var(--gray);margin:10px 0 0;line-height:1.7;text-align:center;}
+.hscroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;padding-bottom:6px;}
+/* スクロール枠の中の図は縮小させない（SVG内の文字が12px未満になるのを防ぐ） */
+.hscroll svg{max-width:none;flex:none;}
+/* PCの広い画面でだけ、わずかにはみ出すSVG（930px）を枠内に収める（縮小率0.99＝実効12.3px以上を維持） */
+@media (min-width:820px){.hscroll.fit svg{max-width:100%;height:auto;}}
+.scrollhint{font-size:11.5px;color:#6B7280;letter-spacing:.06em;margin:0 0 8px;font-weight:700;}
+/* ★スマホで「右にまだ続きがある」ことが分かるように、右端に常時フェードと矢印を出す */
+.hswrap{position:relative;}
+.hswrap::after{content:"";position:absolute;top:0;bottom:8px;right:0;width:30px;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.94) 70%,#fff 100%);}
+.hswrap .hs-arrow{position:absolute;right:2px;top:50%;transform:translateY(-50%);z-index:2;pointer-events:none;font-size:12px;font-weight:800;color:#fff;background:rgba(16,24,40,.78);border-radius:999px;padding:6px 7px;line-height:1;}
+/* PCでは枠内に収まって横スクロールが起きないので、フェードと矢印は出さない */
+@media (min-width:820px){.hswrap::after,.hswrap .hs-arrow{display:none;}}
+
+/* ============ タスクカード（全レーン共通コンポーネント） ============ */
+.lane{--lane:var(--gray);--laned:#5B6373;--lanebg:rgba(138,147,163,.08);}
+.lane-a{--lane:#EA580C;--laned:#B3430A;--lanebg:rgba(234,88,12,.07);}
+.lane-b{--lane:#16A34A;--laned:#0F7A37;--lanebg:rgba(22,163,74,.07);}
+.lane-c{--lane:#7C3AED;--laned:#5B21B6;--lanebg:rgba(124,58,237,.07);}
+.lane-d{--lane:#C9A227;--laned:#8A6E13;--lanebg:rgba(201,162,39,.1);}
+.lane-e{--lane:#DC2626;--laned:#A11B1B;--lanebg:rgba(220,38,38,.07);}
+
+.lanehead{display:flex;align-items:center;gap:12px;background:var(--lanebg);border:1px solid var(--line);border-left:6px solid var(--lane);border-radius:12px;padding:12px 14px;margin:16px 0 18px;}
+.lanehead .lh-id{font-size:22px;font-weight:800;color:var(--laned);line-height:1;flex:none;}
+.lanehead .lh-tx{min-width:0;}
+.lanehead .lh-n{margin:0;font-size:15.5px;font-weight:800;line-height:1.5;color:var(--ink);}
+.lanehead .lh-s{margin:3px 0 0;font-size:13px;color:var(--ink-2);line-height:1.7;}
+
+.tcard{background:#fff;border:1px solid var(--line);border-left:5px solid var(--lane);border-radius:12px;padding:14px 14px 13px;box-shadow:0 1px 2px rgba(16,24,40,.05);}
+.tcard-h{display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
+.tid{flex:none;font-size:12px;font-weight:800;letter-spacing:.06em;color:#fff;background:var(--laned);border-radius:6px;padding:3px 9px;line-height:1.6;font-variant-numeric:tabular-nums;}
+.tname{font-size:15.5px;font-weight:800;line-height:1.5;}
+.tdesc{margin:9px 0 0;font-size:13.8px;color:var(--ink-2);line-height:1.85;}
+.tmeta{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px;}
+.tmeta span{font-size:12px;line-height:1.7;border-radius:6px;padding:3px 8px;border:1px solid var(--line);background:var(--bg-2);color:var(--ink-2);}
+.tmeta .m-who{background:#101828;color:#fff;border-color:#101828;font-weight:700;}
+.tmeta .m-eff{background:#FFFBEF;border-color:#F0E3B8;color:#6B5A16;font-weight:700;}
+.tmeta .m-dep{background:#fff;border-style:dashed;border-color:#CBD2DC;}
+
+/* ============ フロー図（CSS） ============ */
+.flow{display:flex;align-items:stretch;min-width:100%;}
+.fnode{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:4px solid var(--lane,var(--gold));border-radius:10px;padding:11px 7px;text-align:center;}
+/* ★fn-k/fn-t/fn-s は .fnode と .fflag の両方で縦積みにする（.fflag で display:block が効かず1行連結する語順崩壊バグの修正） */
+.fnode .fn-k,.fflag .fn-k{display:block;font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--laned,var(--gold-ink));}
+.fnode .fn-t,.fflag .fn-t{display:block;font-size:13px;font-weight:700;line-height:1.55;margin-top:4px;letter-spacing:0;}
+.fnode .fn-s,.fflag .fn-s{display:block;font-size:11.5px;color:#6B7280;line-height:1.6;margin-top:3px;letter-spacing:0;}
+.farr{flex:none;width:20px;align-self:center;text-align:center;font-size:14px;color:var(--gray);font-weight:700;line-height:1;}
+.fflag{flex:none;min-width:120px;background:linear-gradient(150deg,#8A1B1B 0%,#DC2626 100%);color:#fff;border-radius:10px;padding:11px 10px;text-align:center;}
+.fflag .fn-k{color:#FFD9D9;}
+.fflag .fn-t{color:#fff;}
+.fflag .fn-s{color:#fff;}
+
+.vflow{margin-top:18px;}
+.vstep{position:relative;padding-left:34px;padding-bottom:14px;}
+.vstep::before{content:"";position:absolute;left:9px;top:6px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--lane,var(--blue));}
+.vstep::after{content:"";position:absolute;left:15px;top:22px;bottom:0;width:2px;background:var(--line);}
+.vstep:last-child::after{display:none;}
+.vstep .vs-t{margin:0;font-size:14.8px;font-weight:800;line-height:1.6;}
+.vstep .vs-d{margin:3px 0 0;font-size:13.5px;color:var(--ink-2);line-height:1.85;}
+
+/* ============ ガント ============ */
+.gantt{min-width:820px;}
+.ghead,.grow{display:grid;grid-template-columns:118px 1fr;align-items:stretch;}
+.ghead{border-bottom:2px solid var(--line);padding-bottom:6px;margin-bottom:6px;}
+.ghead .glabel{font-size:11px;letter-spacing:.14em;color:var(--gray);font-weight:700;display:flex;align-items:flex-end;padding-bottom:1px;}
+/* 横スクロールしてもレーン名が残るように固定 */
+.ghead .glabel,.grow .glabel{position:sticky;left:0;z-index:3;background:#fff;}
+.gcols{display:grid;grid-template-columns:repeat(7,1fr);}
+.gcols span{font-size:11.5px;font-weight:700;color:var(--ink-2);text-align:center;line-height:1.5;padding:0 2px;border-left:1px solid var(--line);}
+.gcols span.key{color:var(--gold-ink);}
+.grow{border-bottom:1px dashed var(--line);}
+.grow .glabel{display:flex;flex-direction:column;justify-content:center;padding:10px 10px 10px 0;}
+.grow .gl-id{font-size:12px;font-weight:800;color:var(--laned);letter-spacing:.04em;}
+.grow .gl-n{font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.5;}
+.gtrack{
+  position:relative;display:grid;grid-template-columns:repeat(7,1fr);
+  grid-auto-rows:minmax(30px,auto);gap:4px 0;padding:8px 0;
+  background-image:linear-gradient(90deg,var(--line) 0px,var(--line) 1px,transparent 1px);
+  background-size:calc(100%/7) 100%;
+}
+.gbar{
+  align-self:center;border-radius:7px;padding:5px 8px;font-size:12px;font-weight:700;
+  line-height:1.5;color:#fff;background:var(--lane);white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis;margin:0 3px;box-shadow:0 1px 2px rgba(16,24,40,.12);
+}
+.gbar.soft{background:var(--lanebg);color:var(--laned);border:1px dashed var(--lane);}
+.gbar.deep{background:var(--laned);}
+/* ★12pxの帯なので、明るいレーン色（A橙/B緑/D金）は白文字だと4.5:1に届かない → 濃紺文字にする。
+   C紫・E赤・F青は白文字のままで4.5:1以上（実測 5.70／4.83／5.17）。deep（濃色）は白文字で足りる。 */
+.lane-a .gbar,.lane-b .gbar,.lane-d .gbar{color:#101828;}
+.lane-a .gbar.deep,.lane-b .gbar.deep,.lane-d .gbar.deep{color:#fff;}
+.lane-a .gbar.soft,.lane-b .gbar.soft,.lane-d .gbar.soft{color:var(--laned);}
+.gmark{align-self:center;margin:0 3px;font-size:11.5px;font-weight:800;color:var(--laned);background:#fff;border:1px solid var(--lane);border-radius:999px;padding:3px 8px;line-height:1.5;white-space:nowrap;text-align:center;}
+.gflag{align-self:center;margin:0 3px;font-size:11.5px;font-weight:800;color:#fff;background:#101828;border-radius:6px;padding:4px 8px;line-height:1.5;white-space:nowrap;text-align:center;}
+
+/* ============ 期間バー（§7-2） ============ */
+.pbar{margin-top:16px;}
+.pbar-row{margin-bottom:16px;}
+.pbar-ttl{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:0 0 6px;}
+.pbar-ttl .pb-n{font-size:14.5px;font-weight:800;}
+.pbar-ttl .pb-v{font-size:13px;font-weight:800;color:var(--gold-ink);}
+.pbar-track{position:relative;height:34px;background:var(--bg-2);border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+.pbar-track .pb-grid{position:absolute;inset:0;background-image:linear-gradient(90deg,#E4E7EC 0px,#E4E7EC 1px,transparent 1px);background-size:calc(100%/12) 100%;}
+.pbar-fill{position:absolute;top:5px;bottom:5px;left:0;display:flex;border-radius:6px;overflow:hidden;}
+.pbar-fill i{display:block;height:100%;}
+.sg-plan{background:#94A3B8;}
+.sg-shoot{background:#EA580C;}
+.sg-edit{background:#C9A227;}
+.sg-fix{background:#16A34A;}
+/* ★工程の配分が出典に無いレンジは、工程色を使わず中立の斜線で示す（編集色で全塗りしない） */
+.sg-any{background:repeating-linear-gradient(45deg,#C3CAD6 0px,#C3CAD6 6px,#DFE3EA 6px,#DFE3EA 12px);}
+.pbar-ext{position:absolute;top:5px;bottom:5px;border-radius:6px;background:repeating-linear-gradient(45deg,rgba(201,162,39,.35) 0px,rgba(201,162,39,.35) 5px,rgba(201,162,39,.12) 5px,rgba(201,162,39,.12) 10px);border:1px dashed var(--gold);}
+.pbar-scale{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));margin-top:4px;}
+.pbar-scale span{font-size:10.5px;color:var(--gray);text-align:right;padding-right:2px;line-height:1.6;font-variant-numeric:tabular-nums;overflow:hidden;}
+.pbar-scale.dates span{grid-column:span 2;font-size:11px;}
+.pbar-brk{margin:6px 0 0;font-size:12.5px;color:var(--ink-2);line-height:1.8;}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;}
+.legend span{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-2);line-height:1.7;}
+.legend i{width:14px;height:10px;border-radius:3px;display:inline-block;flex:none;}
+.marker-line{position:absolute;top:0;bottom:0;width:2px;background:var(--red);}
+.marker-cap{position:absolute;top:-2px;font-size:10.5px;font-weight:800;color:#fff;background:var(--red);border-radius:4px;padding:1px 5px;line-height:1.6;white-space:nowrap;}
+
+/* ============ 比較表（§9-1） ============ */
+.crow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:0;margin-bottom:12px;overflow:hidden;box-shadow:0 1px 2px rgba(16,24,40,.05);}
+.crow-in{display:grid;grid-template-columns:1.25fr .9fr .78fr 1.05fr;}
+.cc{padding:13px 14px;border-left:1px solid var(--line);}
+.cc:first-child{border-left:0;background:var(--bg-2);}
+.cc .cl{display:block;font-size:10.5px;font-weight:800;letter-spacing:.12em;color:var(--gray);margin-bottom:5px;}
+.cc .cv{display:block;font-size:13.8px;font-weight:700;line-height:1.7;}
+.cc .cn{display:block;font-size:12px;color:var(--ink-2);line-height:1.75;margin-top:4px;}
+.cv.big{font-size:17px;font-weight:800;color:var(--red-ink);}
+.cv.ok{color:var(--green-ink);}
+.cv.ng{color:var(--red-ink);}
+
+/* ============ 役割ボード（§11） ============ */
+.rolecard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 3px rgba(16,24,40,.06);display:flex;flex-direction:column;}
+.rolecard .rc-top{padding:13px 14px;color:#fff;background:linear-gradient(150deg,#1B2A4A 0%,#101828 100%);}
+.rolecard.who-i .rc-top{background:linear-gradient(150deg,#8A4A0A 0%,#EA580C 100%);}
+.rolecard.who-m .rc-top{background:linear-gradient(150deg,#12603A 0%,#16A34A 100%);}
+.rolecard.who-t .rc-top{background:linear-gradient(150deg,#1E3A8A 0%,#2563EB 100%);}
+.rolecard.who-s .rc-top{background:linear-gradient(150deg,#4A3410 0%,#8A6E13 100%);}
+.rolecard .rc-n{margin:0;font-size:16px;font-weight:800;line-height:1.5;}
+.rolecard .rc-r{margin:3px 0 0;font-size:12px;line-height:1.7;opacity:.92;}
+.rolecard .rc-b{padding:13px 14px 15px;}
+.rolecard .rc-cnt{font-size:11.5px;font-weight:800;letter-spacing:.1em;color:var(--gray);margin:0 0 8px;}
+.chips{display:flex;flex-wrap:wrap;gap:6px;}
+.chip{font-size:12px;font-weight:700;border-radius:6px;padding:3px 8px;line-height:1.65;border:1px solid var(--line);background:var(--bg-2);color:var(--ink-2);white-space:nowrap;}
+.chip.a{background:rgba(234,88,12,.1);color:#B3430A;border-color:rgba(234,88,12,.3);}
+.chip.b{background:rgba(22,163,74,.1);color:#0F7A37;border-color:rgba(22,163,74,.3);}
+.chip.c{background:rgba(124,58,237,.1);color:#5B21B6;border-color:rgba(124,58,237,.3);}
+.chip.d{background:rgba(201,162,39,.14);color:#8A6E13;border-color:rgba(201,162,39,.38);}
+.chip.e{background:rgba(220,38,38,.1);color:#A11B1B;border-color:rgba(220,38,38,.3);}
+.openslot{background:#fff;border:2px dashed #CBD2DC;border-radius:var(--radius);padding:16px 15px;margin-top:14px;}
+.openslot .os-t{margin:0 0 4px;font-size:15px;font-weight:800;}
+.openslot .os-s{margin:0 0 10px;font-size:13px;color:var(--ink-2);line-height:1.8;}
+.openslot li{font-size:13.5px;color:var(--ink-2);line-height:1.85;padding-left:20px;position:relative;margin-bottom:6px;}
+.openslot li::before{content:"";position:absolute;left:4px;top:10px;width:7px;height:7px;border:2px solid var(--gray);border-radius:50%;}
+
+/* ============ リスト・チェック・ルール ============ */
+.list li{position:relative;padding-left:24px;margin-bottom:11px;font-size:14.5px;line-height:1.9;color:var(--ink-2);}
+.list li::before{content:"";position:absolute;left:4px;top:11px;width:8px;height:8px;border-radius:2px;background:var(--gold);transform:rotate(45deg);}
+.list li b{color:var(--ink);}
+.check li{display:flex;gap:11px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 13px;margin-bottom:9px;font-size:14.5px;line-height:1.85;}
+.check .box{flex:none;width:19px;height:19px;border:2px solid var(--gold);border-radius:5px;margin-top:5px;background:#FFFDF5;}
+.check .who{display:inline-block;font-size:11.5px;font-weight:800;background:var(--navy);color:#fff;border-radius:5px;padding:2px 7px;margin-right:7px;line-height:1.7;}
+.rule li{position:relative;padding:12px 13px 12px 42px;background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:9px;font-size:14.3px;line-height:1.85;color:var(--ink-2);}
+.rule li::before{content:"";position:absolute;left:14px;top:18px;width:14px;height:14px;border-radius:50%;background:rgba(220,38,38,.12);border:2px solid var(--red);}
+.rule li b{color:var(--ink);}
+
+/* ============ フッター ============ */
+.footer{background:#0B1220;color:#98A2B3;padding:44px 16px 56px;border-top:3px solid var(--gold);}
+.footer-inner{max-width:980px;margin:0 auto;}
+.footer .ft{font-size:12px;letter-spacing:.2em;color:var(--gold-soft);font-weight:700;margin-bottom:14px;}
+.footer p{font-size:13px;line-height:1.95;margin:0 0 10px;}
+.footer .strong{color:#E4E7EC;font-weight:700;}
+
+/* ============ 演出（JSが動いたときだけ隠す） ============ */
+.rv-on .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease;}
+.rv-on .rv.is-in{opacity:1;transform:none;}
+@media (prefers-reduced-motion: reduce){
+  .rv-on .rv{opacity:1 !important;transform:none !important;transition:none !important;}
+}
+
+/* ============ レスポンシブ ============ */
+@media (max-width:760px){
+  .crow-in{grid-template-columns:1fr;}
+  .cc{border-left:0;border-top:1px solid var(--line);}
+  .cc:first-child{border-top:0;}
+}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  .wrap{padding:0 12px;}
+  .section{padding:44px 0 6px;}
+  .card{padding:14px 12px;}
+  .fig{padding:12px 8px 10px;}
+  .hero-inner{padding:52px 14px 44px;}
+  .chapter{gap:10px;}
+  .tcard{padding:13px 12px 12px;}
+  .tname{font-size:15px;}
+  .g6{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media print{
+  .rv{opacity:1 !important;transform:none !important;}
+  .hero,.footer,.toc{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .toc{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ========== 0. ヒーロー ========== -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="warboard"><span class="o"></span><span class="o"></span><span></span><span class="g2"></span><span class="g2"></span><span></span><span class="p"></span><span></span><span class="y"></span><span class="y"></span><span class="y"></span><span></span><span class="r"></span><span class="r"></span><span></span><span class="b"></span></div>
+    <span class="hero-label">LAUNCH TASK MAP ／ 社外秘・チーム共有用</span>
+    <h1>岩瀬さんローンチ<br><span class="accent">全体タスクマップ</span></h1>
+    <p class="hero-sub">フロント発信 → リスト取り → 教育 → 動画3本 → 販売・クロージングまで、全タスクを1枚に。</p>
+    <div class="hero-rule"></div>
+    <p class="hero-meta">2026-09-12作成｜出典: 9/3ミーティング＋追加指示｜姉妹資料: ストーリー戦略編（index.html）</p>
+    <p class="hero-scroll">SCROLL ↓</p>
+  </div>
+</header>
+
+<!-- ========== 目次 ========== -->
+<nav class="toc">
+  <div class="toc-inner">
+    <p class="toc-title">CONTENTS</p>
+    <div class="toc-list">
+      <a href="#s1"><b>01</b>30秒でわかる全体像</a>
+      <a href="#s2"><b>02</b>ファネル×5レーン</a>
+      <a href="#s3"><b>03</b>マスタースケジュール</a>
+      <a href="#s4"><b>04</b>A SNS発信（最重要）</a>
+      <a href="#s5"><b>05</b>B LINE・プロライン</a>
+      <a href="#s6"><b>06</b>C オープンチャット</a>
+      <a href="#s7"><b>07</b>D 動画制作</a>
+      <a href="#s8"><b>08</b>E セールス</a>
+      <a href="#s9"><b>09</b>依存関係マップ</a>
+      <a href="#s10"><b>10</b>役割分担ボード</a>
+      <a href="#s11"><b>11</b>直近2週間の動き</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== 1. 30秒でわかる全体像 ========== -->
+<section class="section" id="s1">
+  <div class="wrap">
+    <div class="chapter rv">
+      <div class="chapter-no">01</div>
+      <div class="chapter-txt">
+        <p class="chapter-kicker">TL;DR</p>
+        <h2>30秒でわかる全体像</h2>
+      </div>
+    </div>
+    <p class="lead rv">ゴールは10月末クローズ・売上3,000万円。そこから逆算すると、仕事は5本の川（ワークストリーム）に分かれる。この資料は、その5本の川の全35タスクを洗い出したもの。スケジュールの確定は担当者に任せる前提で、依存関係と目安期間まで書いた。<b>方針は「早め早めに前倒し」</b>。とくに A（インスタ発信＝リード獲得）と C（オープンチャットの教育）は今週から動かす。</p>
+
+    <div class="grid g6 rv">
+      <div class="numcard"><p class="k">売上目標</p><p class="v">3,000万円</p><p class="n">10月末クローズ</p></div>
+      <div class="numcard"><p class="k">動画</p><p class="v sm">3本 × 約15分</p><p class="n">10/17・10/20・10/23 公開</p></div>
+      <div class="numcard"><p class="k">リスト</p><p class="v sm">1,190 → 2,500人</p><p class="n">1日 約+25人ペース</p></div>
+      <div class="numcard"><p class="k">オープンチャット</p><p class="v">1,700人</p><p class="n">集める目標</p></div>
+      <div class="numcard"><p class="k">フォロワー</p><p class="v">1.2万人</p><p class="n">Instagram</p></div>
+      <div class="numcard"><p class="k">9/15</p><p class="v sm">岩瀬さん退職</p><p class="n">平日昼が撮影・制作に使える</p></div>
+    </div>
+
+    <div class="note rv"><b>この資料の使い方。</b>「いつやるか」は入れていない（日付はすべて仮）。入っているのは <b>タスクの全量・担当・目安の工数・つながり（依存）</b> の4つ。スケジュール担当が、この順序を崩さずに日付を埋めていけばそのまま計画表になる。</div>
+    <div class="hr"></div>
+  </div>
+</section>
+
+<!-- ========== 2. ファネル × 5ワークストリーム ========== -->
+<div class="band">
+<section class="section" id="s2">
+  <div class="wrap">
+    <div class="chapter rv">
+      <div class="chapter-no">02</div>
+      <div class="chapter-txt">
+        <p class="chapter-kicker">MAP</p>
+        <h2>全体ファネル × 5ワークストリーム</h2>
+      </div>
+    </div>
+    <p class="lead rv">左が「お客さんが通る道」（ファネル）。右が「僕らがやる仕事」（5本のレーン）。どのレーンがどこを支えているか、線でつないだ。</p>
+
+    <div class="fig rv">
+      <p class="scrollhint">← 横にスクロールできます →</p>
+      <div class="hscroll">
+      <svg viewBox="0 0 900 530" width="900" role="img" aria-label="左側の縦ファネル6段階と、右側の5ワークストリームの対応図">
+        <defs>
+          <marker id="mArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#98A2B3"/>
+          </marker>
+        </defs>
+        <text x="160" y="20" text-anchor="middle" fill="#475467" font-size="13" font-weight="700">お客さんが通る道（ファネル）</text>
+        <text x="700" y="20" text-anchor="middle" fill="#475467" font-size="13" font-weight="700">僕らがやる仕事（5レーン）</text>
+
+        <!-- ファネル -->
+        <rect x="20" y="34" width="280" height="58" rx="10" fill="#1B2A4A"/>
+        <text x="160" y="58" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">① フロント発信</text>
+        <text x="160" y="79" text-anchor="middle" fill="#C3CDE0" font-size="12.5">Instagram で出会う</text>
+
+        <rect x="28" y="106" width="264" height="58" rx="10" fill="#22304F"/>
+        <text x="160" y="130" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">② リスト取り</text>
+        <text x="160" y="151" text-anchor="middle" fill="#C3CDE0" font-size="12.5">LINE に登録してもらう</text>
+
+        <rect x="36" y="178" width="248" height="58" rx="10" fill="#2A3557"/>
+        <text x="160" y="202" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">③ オープンチャット教育</text>
+        <text x="160" y="223" text-anchor="middle" fill="#C3CDE0" font-size="12.5">コラムで「聞く姿勢」をつくる</text>
+
+        <rect x="44" y="250" width="232" height="58" rx="10" fill="#3A3A4E"/>
+        <text x="160" y="274" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">④ 動画3本</text>
+        <text x="160" y="295" text-anchor="middle" fill="#D8CFA8" font-size="12.5">心が動く・教育の主砲</text>
+
+        <rect x="52" y="322" width="216" height="58" rx="10" fill="#4A2F33"/>
+        <text x="160" y="346" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">⑤ セールス</text>
+        <text x="160" y="367" text-anchor="middle" fill="#E8C6C6" font-size="12.5">募集・個別相談</text>
+
+        <rect x="60" y="394" width="200" height="58" rx="10" fill="#5A2B2B"/>
+        <text x="160" y="418" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">⑥ クロージング</text>
+        <text x="160" y="439" text-anchor="middle" fill="#E8C6C6" font-size="12.5">決めてもらう・決済</text>
+
+        <!-- 下向き矢印 -->
+        <path d="M160,96 L160,102" stroke="#98A2B3" stroke-width="2" marker-end="url(#mArr)"/>
+        <path d="M160,168 L160,174" stroke="#98A2B3" stroke-width="2" marker-end="url(#mArr)"/>
+        <path d="M160,240 L160,246" stroke="#98A2B3" stroke-width="2" marker-end="url(#mArr)"/>
+        <path d="M160,312 L160,318" stroke="#98A2B3" stroke-width="2" marker-end="url(#mArr)"/>
+        <path d="M160,384 L160,390" stroke="#98A2B3" stroke-width="2" marker-end="url(#mArr)"/>
+
+        <!-- 5レーン -->
+        <rect x="560" y="34" width="320" height="58" rx="10" fill="#FFF3EA" stroke="#EA580C" stroke-width="2"/>
+        <rect x="560" y="34" width="7" height="58" rx="3" fill="#EA580C"/>
+        <text x="580" y="58" fill="#B3430A" font-size="14" font-weight="800">A SNSフロント発信</text>
+        <text x="580" y="79" fill="#7A4A2A" font-size="12.5">毎日の発信でリストを増やす</text>
+
+        <rect x="560" y="124" width="320" height="58" rx="10" fill="#EFFAF3" stroke="#16A34A" stroke-width="2"/>
+        <rect x="560" y="124" width="7" height="58" rx="3" fill="#16A34A"/>
+        <text x="580" y="148" fill="#0F7A37" font-size="14" font-weight="800">B LINE・プロライン基盤</text>
+        <text x="580" y="169" fill="#2A5A3E" font-size="12.5">受け皿と自動の案内・予約</text>
+
+        <rect x="560" y="214" width="320" height="58" rx="10" fill="#F5F0FE" stroke="#7C3AED" stroke-width="2"/>
+        <rect x="560" y="214" width="7" height="58" rx="3" fill="#7C3AED"/>
+        <text x="580" y="238" fill="#5B21B6" font-size="14" font-weight="800">C オープンチャット</text>
+        <text x="580" y="259" fill="#4A3A6B" font-size="12.5">コラム配信で温める場</text>
+
+        <rect x="560" y="304" width="320" height="58" rx="10" fill="#FFFBEC" stroke="#C9A227" stroke-width="2"/>
+        <rect x="560" y="304" width="7" height="58" rx="3" fill="#C9A227"/>
+        <text x="580" y="328" fill="#8A6E13" font-size="14" font-weight="800">D ドキュメンタリー動画</text>
+        <text x="580" y="349" fill="#6B5A16" font-size="12.5">最重要レーン・3本制作</text>
+
+        <rect x="560" y="394" width="320" height="58" rx="10" fill="#FFF3F3" stroke="#DC2626" stroke-width="2"/>
+        <rect x="560" y="394" width="7" height="58" rx="3" fill="#DC2626"/>
+        <text x="580" y="418" fill="#A11B1B" font-size="14" font-weight="800">E セールス・クロージング</text>
+        <text x="580" y="439" fill="#7A2222" font-size="12.5">オファーと個別相談</text>
+
+        <!-- 対応線 -->
+        <path d="M300,63 C420,63 440,63 556,63" stroke="#EA580C" stroke-width="2.5" fill="none"/>
+        <circle cx="300" cy="63" r="4" fill="#EA580C"/>
+
+        <path d="M292,135 C400,135 430,150 470,150 L556,153" stroke="#16A34A" stroke-width="2.5" fill="none"/>
+        <path d="M268,351 C380,351 430,300 470,240 L470,150" stroke="#16A34A" stroke-width="2.5" fill="none" stroke-dasharray="6 5"/>
+        <circle cx="292" cy="135" r="4" fill="#16A34A"/>
+        <circle cx="268" cy="351" r="4" fill="#16A34A"/>
+        <text x="392" y="198" fill="#0F7A37" font-size="12.5" font-weight="700">②〜⑤をつなぐ土台</text>
+
+        <path d="M284,207 C400,207 450,243 556,243" stroke="#7C3AED" stroke-width="2.5" fill="none"/>
+        <circle cx="284" cy="207" r="4" fill="#7C3AED"/>
+
+        <path d="M276,279 C400,279 450,333 556,333" stroke="#C9A227" stroke-width="3.5" fill="none"/>
+        <circle cx="276" cy="279" r="4.5" fill="#C9A227"/>
+
+        <path d="M268,351 C380,351 450,423 556,423" stroke="#DC2626" stroke-width="2.5" fill="none"/>
+        <path d="M260,423 C380,423 450,423 556,423" stroke="#DC2626" stroke-width="2.5" fill="none" stroke-dasharray="6 5"/>
+        <circle cx="268" cy="351" r="4" fill="#DC2626"/>
+        <circle cx="260" cy="423" r="4" fill="#DC2626"/>
+
+        <text x="450" y="505" text-anchor="middle" fill="#5B6472" font-size="12.5">実線＝主に支える場所／点線＝あわせて効いてくる場所</text>
+      </svg>
+      </div>
+      <p class="fig-cap">5レーンの識別色はこの資料全体で共通。A=オレンジ／B=緑／C=紫／D=金／E=赤。</p>
+    </div>
+
+    <div class="grid g3 rv" style="margin-top:18px">
+      <div class="card lane lane-a" style="border-left:5px solid var(--lane)"><h4>A SNSフロント発信<span class="badge now">最重要</span></h4><p>ファネルの最上流＝リード獲得。ここが細いと、あとの全部が細くなる。</p></div>
+      <div class="card lane lane-b" style="border-left:5px solid var(--lane)"><h4>B LINE・プロライン基盤</h4><p>登録から個別相談の予約まで、自動で運ぶレール。</p></div>
+      <div class="card lane lane-c" style="border-left:5px solid var(--lane)"><h4>C オープンチャット<span class="badge now">今週から</span></h4><p>動画を見る前に「聞く姿勢」をつくる教育の場。コラム配信は今週スタート。</p></div>
+      <div class="card lane lane-d" style="border-left:5px solid var(--lane)"><h4>D ドキュメンタリー動画</h4><p>教育の主砲。3本で共感 → 再現性 → 未来へ運ぶ。</p></div>
+      <div class="card lane lane-e" style="border-left:5px solid var(--lane)"><h4>E セールス・クロージング</h4><p>募集・個別相談・締め。10月下旬が本番。</p></div>
+    </div>
+    <div style="height:36px"></div>
+  </div>
+</section>
+</div>
+
+<!-- ========== 3. マスタースケジュール ========== -->
+<section class="section" id="s3">
+  <div class="wrap">
+    <div class="chapter rv">
+      <div class="chapter-no">03</div>
+      <div class="chapter-txt">
+        <p class="chapter-kicker">MASTER SCHEDULE</p>
+        <h2>5レーンを1枚に並べる</h2>
+      </div>
+    </div>
+    <p class="lead rv">9月上旬から11月上旬まで、5本のレーンがどう重なるかを横に並べた。<b>日付はまだ仮</b>。ここで見てほしいのは「どれが先で、どれが後か」という順序と、重なり方。</p>
+
+    <div class="fig rv">
+      <p class="scrollhint">← 横にスクロールできます →　<b>スマホでは右側が隠れます。E（セールス）のバーは10月＝右端にあります。</b></p>
+      <div class="hswrap">
+      <span class="hs-arrow" aria-hidden="true">▶</span>
+      <div class="hscroll">
+        <div class="gantt">
+          <div class="ghead">
+            <div class="glabel">WORKSTREAM</div>
+            <div class="gcols">
+              <span>9月<br>上旬</span>
+              <span class="key">9/15<br>退職</span>
+              <span>9月<br>下旬</span>
+              <span>10月<br>上旬</span>
+              <span class="key">10/17・20・23<br>動画公開</span>
+              <span class="key">10月末<br>クローズ</span>
+              <span>11月<br>上旬</span>
+            </div>
+          </div>
+
+          <div class="grow lane lane-a">
+            <div class="glabel"><span class="gl-id">A</span><span class="gl-n">SNSフロント発信<br>（最重要）</span></div>
+            <div class="gtrack">
+              <div class="gbar" style="grid-column:1/7;grid-row:1">毎日の発信をとにかく継続（ストーリー・リール）</div>
+              <div class="gbar deep" style="grid-column:1/4;grid-row:2">A6・A7 リスト誘導の台本＋動画（早急）</div>
+              <div class="gmark" style="grid-column:4/6;grid-row:3">ティザー強化</div>
+            </div>
+          </div>
+
+          <div class="grow lane lane-b">
+            <div class="glabel"><span class="gl-id">B</span><span class="gl-n">LINE・プロライン</span></div>
+            <div class="gtrack">
+              <div class="gbar" style="grid-column:2/5;grid-row:1">構築（連携・シナリオ・予約・テスト）</div>
+              <div class="gbar soft" style="grid-column:5/8;grid-row:1">運用・配信</div>
+            </div>
+          </div>
+
+          <div class="grow lane lane-c">
+            <div class="glabel"><span class="gl-id">C</span><span class="gl-n">オープンチャット<br>（今週から）</span></div>
+            <div class="gtrack">
+              <div class="gbar" style="grid-column:1/2;grid-row:1">今週 開設</div>
+              <div class="gbar deep" style="grid-column:2/7;grid-row:1">コラム配信スタート → 運営・盛り上げ（長く続ける）</div>
+              <div class="gmark" style="grid-column:1/3;grid-row:2">早急に着手</div>
+            </div>
+          </div>
+
+          <div class="grow lane lane-d">
+            <div class="glabel"><span class="gl-id">D</span><span class="gl-n">動画制作</span></div>
+            <div class="gtrack">
+              <div class="gbar" style="grid-column:2/4;grid-row:1">打ち合わせ・構成</div>
+              <div class="gbar deep" style="grid-column:3/6;grid-row:2">撮影 → 編集 → 試写・修正</div>
+              <div class="gflag" style="grid-column:5/7;grid-row:3">①10/17 ②10/20 ③10/23 公開</div>
+            </div>
+          </div>
+
+          <div class="grow lane lane-e">
+            <div class="glabel"><span class="gl-id">E</span><span class="gl-n">セールス</span></div>
+            <div class="gtrack">
+              <div class="gbar soft" style="grid-column:4/5;grid-row:1">準備</div>
+              <div class="gbar deep" style="grid-column:5/7;grid-row:1">募集・個別相談・クロージング</div>
+              <div class="gflag" style="grid-column:6/8;grid-row:2">10月末 クローズ</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      </div>
+      <p class="fig-cap">濃い色＝いちばん忙しい期間／うすい点線の帯＝運用・待ち受けの期間。</p>
+    </div>
+
+    <div class="note rv"><b>日付はまだ仮。スケジュールの確定は担当者が行う。</b>ここで正しいのは「順序」と「依存関係」だけ。<br><b>進め方の方針: 全体を早め早めに前倒しで進める。</b>とくに C（オープンチャットの教育）と A6・A7（リスト誘導の台本・動画）は今週から着手する。動画の公開日 10/17・10/20・10/23 はこのままでいく。<br>あわせて確認したいこと: 撮影の可否は岩瀬さんのシフト次第（9/15以降は平日昼OK／自営業の営業日は夜のみ稼働＝昼間は空き・対象の曜日は<b>要確認</b>／11月のライブ1日はNG）。<span class="badge">要確認</span><span class="badge src">出典: 9/3会議</span></div>
+    <div class="info rv">
+      <p class="wt">いま止まると、あとで取り返せないもの</p>
+      <p>Aのリスト（毎日の積み上げ）と、Cのコラム配信（信頼の積み上げ）は、あとから一気に増やせない。<b>この2本は今週から動かす。</b>逆に E（セールス）は10月下旬の短期集中でよい。</p>
+    </div>
+    <div class="hr"></div>
+  </div>
+</section>
+
+<!-- ========== 4. ワークストリームA ========== -->
+<div class="band">
+<section class="section" id="s4">
+  <div class="wrap">
+    <div class="chapter rv">
+      <div class="chapter-no">04</div>
+      <div class="chapter-txt">
+        <p class="chapter-kicker">WORKSTREAM A ／ 最重要</p>
+        <h2>SNSフロント発信</h2>
+      </div>
+    </div>
+    <p class="lead rv"><b>このローンチで一番重要なのが、ここ。</b>パーチェスファネルのいちばん上流＝リード獲得（インスタフロント）だから。ここで集めた人数が、そのまま教育・動画・セールスの母数になる。下が細ければ、上でどれだけがんばっても数字は伸びない。</p>
+
+    <div class="lane lane-a">
+      <div class="lanehead rv">
+        <span class="lh-id">A</span>
+        <div class="lh-tx">
+          <p class="lh-n">毎日の発信 → リスト +25人/日 → 2,500人</p>
+          <p class="lh-s">ファネルの入口。数を作るレーン。止まると全部が細くなる。</p>
+        </div>
+      </div>
+
+      <div class="fig rv">
+        <div style="max-width:620px;margin:0 auto">
+          <p style="margin:0 0 5px;font-size:12.5px;font-weight:700;color:#475467">いま（2026-09-03時点）</p>
+          <div style="position:relative;height:34px;background:#F7F8FA;border:1px solid #E4E7EC;border-radius:8px;overflow:hidden">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:47.6%;background:linear-gradient(90deg,#E2762B 0%,#C2410C 40%,#C2410C 100%);display:flex;align-items:center;justify-content:flex-end;padding-right:9px;color:#fff;font-size:12.5px;font-weight:800">1,190人</div>
+          </div>
+          <p style="margin:14px 0 5px;font-size:12.5px;font-weight:700;color:#475467">目標</p>
+          <div style="position:relative;height:34px;background:#F7F8FA;border:1px solid #E4E7EC;border-radius:8px;overflow:hidden">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:47.6%;background:#FBD9C0"></div>
+            <div style="position:absolute;left:47.6%;right:0;top:0;bottom:0;background:repeating-linear-gradient(45deg,rgba(234,88,12,.55) 0px,rgba(234,88,12,.55) 6px,rgba(234,88,12,.25) 6px,rgba(234,88,12,.25) 12px);display:flex;align-items:center;justify-content:center;color:#7A3A0A;font-size:12.5px;font-weight:800">あと 1,310人</div>
+            <div style="position:absolute;right:9px;top:0;bottom:0;display:flex;align-items:center;color:#7A3A0A;font-size:12.5px;font-weight:800"></div>
+          </div>
+          <p style="margin:8px 0 0;font-size:12.5px;color:#475467;line-height:1.8">2,500 − 1,190 ＝ <b>1,310人</b>。1日+25人なら <b>約52日ぶん</b>の積み上げが必要。<span class="badge est">概算</span></p>
+        </div>
+        <p class="fig-cap">ペースが落ちたら、発信量を増やすか、オープンチャットからの流入を足す（A8で週次チェック）。いちばん効くのは A6・A7 のリスト誘導動画。</p>
+      </div>
+
+      <div class="grid g2 rv" style="margin-top:18px">
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">A1</span><span class="tname">発信カレンダー設計</span></div>
+          <p class="tdesc">週のリール本数・ストーリーの型を決める。決めてしまえば毎日迷わない。</p>
+          <div class="tmeta"><span class="m-who">岩瀬さん＋的場さん</span><span class="m-eff">目安 半日</span><span class="m-dep">依存 なし（すぐ着手可）</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">A2</span><span class="tname">ストーリー毎日発信（継続）</span></div>
+          <p class="tdesc">日常・裏側・進捗で親近感をつくる。ドキュメンタリーの下地になる。</p>
+          <div class="tmeta"><span class="m-who">岩瀬さん</span><span class="m-eff">毎日15〜30分</span><span class="m-dep">依存 A1</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">A3</span><span class="tname">リール制作・投稿（継続）</span></div>
+          <p class="tdesc">リスト取りの入口。新しい人に出会う担当。</p>
+          <div class="tmeta"><span class="m-who">岩瀬さん</span><span class="m-eff">週2〜3本</span><span class="m-dep">依存 A1</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">A4</span><span class="tname">リスト導線の点検</span></div>
+          <p class="tdesc">ストーリーからLINE登録までの誘導文・リンクを整える。取りこぼしを止める。</p>
+          <div class="tmeta"><span class="m-who">的場さん</span><span class="m-eff">目安 半日</span><span class="m-dep">依存 B5（経路別URL）</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">A5</span><span class="tname">ローンチ予告・ティザー発信</span></div>
+          <p class="tdesc">「ドキュメンタリーが出るよ」の期待づくり。10月上旬から強める。</p>
+          <div class="tmeta"><span class="m-who">岩瀬さん＋的場さん</span><span class="m-eff">随時</span><span class="m-dep">依存 D2（3本の中身が決まってから）</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">A6</span><span class="tname">リスト誘導の台本作成</span><span class="badge now">早急</span></div>
+          <p class="tdesc">リール・ストーリーで「LINEに登録してね」まで運ぶ言い方を、台本にして決めておく。毎回考えなくてよくなる。</p>
+          <div class="tmeta"><span class="m-who">岩瀬さん＋的場さん</span><span class="m-eff">目安 半日〜1日</span><span class="m-dep">依存 A1 ／ <b>A7の前提</b></span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">A7</span><span class="tname">リスト誘導動画の制作</span><span class="badge now">早急</span></div>
+          <p class="tdesc">A6の台本で、フォロワーをリストインさせる誘導動画をつくる。リスト増のいちばん太い入口になる。</p>
+          <div class="tmeta"><span class="m-who">岩瀬さん＋制作チーム</span><span class="m-eff">目安 1〜2日</span><span class="m-dep">依存 A6・B5（登録リンク）</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">A8</span><span class="tname">リスト進捗の週次確認</span></div>
+          <p class="tdesc">+25人/日ペースを監視。足りなければ発信量・導線を修正する。</p>
+          <div class="tmeta"><span class="m-who">的場さん</span><span class="m-eff">週次15分</span><span class="m-dep">依存 B5（計測できる状態）</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="height:36px"></div>
+  </div>
+</section>
+</div>
+
+<!-- ========== 5. ワークストリームB ========== -->
+<section class="section" id="s5">
+  <div class="wrap">
+    <div class="chapter rv">
+      <div class="chapter-no">05</div>
+      <div class="chapter-txt">
+        <p class="chapter-kicker">WORKSTREAM B</p>
+        <h2>LINE・プロライン基盤</h2>
+      </div>
+    </div>
+
+    <div class="lane lane-b">
+      <div class="lanehead rv">
+        <span class="lh-id">B</span>
+        <div class="lh-tx">
+          <p class="lh-n">登録した人を、自動で個別相談まで運ぶレール</p>
+          <p class="lh-s">プロライン＝「LINE公式アカウントの拡張ツール」（公式LPの表記）。<b>LINE公式アカウントが別途必須</b>で、プロライン単体では配信できない。</p>
+        </div>
+      </div>
+
+      <div class="fig rv">
+        <p class="scrollhint">← 横にスクロールできます →</p>
+        <div class="hscroll">
+          <div class="flow" style="min-width:880px">
+            <div class="fnode"><span class="fn-k">STEP 1</span><span class="fn-t">LINE登録</span><span class="fn-s">経路別URLで流入</span></div>
+            <i class="farr">▶</i>
+            <div class="fnode"><span class="fn-k">STEP 2</span><span class="fn-t">あいさつ配信</span><span class="fn-s">最初の自己紹介</span></div>
+            <i class="farr">▶</i>
+            <div class="fnode"><span class="fn-k">STEP 3</span><span class="fn-t">教育配信（数通）</span><span class="fn-s">前フリをつくる</span></div>
+            <i class="farr">▶</i>
+            <div class="fnode"><span class="fn-k">STEP 4</span><span class="fn-t">動画①②③の案内</span><span class="fn-s">10/17・20・23</span></div>
+            <i class="farr">▶</i>
+            <div class="fnode"><span class="fn-k">STEP 5</span><span class="fn-t">個別相談の<br>日程調整</span><span class="fn-s">予約カレンダー</span></div>
+            <i class="farr">▶</i>
+            <div class="fnode"><span class="fn-k">STEP 6</span><span class="fn-t">リマインド</span><span class="fn-s">当日までの声かけ</span></div>
+          </div>
+        </div>
+        <p class="fig-cap">ステップ配信・シナリオ分岐・予約受付（リマインド配信・Googleカレンダー／Zoom連携）は公式LPで「あり」と確認済み。</p>
+      </div>
+
+      <div class="warn rv">
+        <p class="wt">先に決めること: プランの前提（これが決まらないと構築に入れない）</p>
+        <p>フリープランは<b>10ステップまで</b>（公式）。今回のDRM（動画3本の案内＋前フリ＋クロージング＋リマインド）は10ステップを容易に超える。</p>
+        <ul>
+          <li><b>有料プランの無料お試し（最大90日・期間中はステップ数無制限）</b>を使う<span class="badge est">二次情報</span>／または<b>プロプラン 9,680円/月</b>（公式）で構築する。</li>
+          <li>プロラインの配信数とは別に、<b>LINE公式アカウント本体の配信通数プラン（月200通／5,000通／30,000通）も消費される</b>。<span class="badge est">二次情報</span></li>
+          <li>メール配信の自動化は非対応（LINE特化）。<span class="badge est">二次情報</span></li>
+        </ul>
+      </div>
+
+      <div class="grid g2 rv" style="margin-top:18px">
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">B1</span><span class="tname">LINE公式＋プロライン開設・連携</span></div>
+          <p class="tdesc">LINE公式アカウントの準備 → プロラインのアカウント作成 → 連携設定 → 管理画面の把握。ここが全部の土台。</p>
+          <div class="tmeta"><span class="m-who">制作チーム</span><span class="m-eff">目安 半日〜1日</span><span class="m-dep">依存 なし（最優先で着手）</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">B2</span><span class="tname">ステップ配信シナリオ設計</span></div>
+          <p class="tdesc">登録から個別相談までの「配信の設計図」を描く。プラン選択（ステップ数）もここで確定。</p>
+          <div class="tmeta"><span class="m-who">的場さん</span><span class="m-eff">目安 1〜2日</span><span class="m-dep">依存 B1</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">B3</span><span class="tname">配信原稿の執筆</span></div>
+          <p class="tdesc">シナリオ全通ぶんの文章を書く。分量がいちばん多いタスク。</p>
+          <div class="tmeta"><span class="m-who">的場さん＋制作チーム</span><span class="m-eff">目安 2〜3日</span><span class="m-dep">依存 B2</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">B4</span><span class="tname">予約カレンダー構築</span></div>
+          <p class="tdesc">個別相談の枠・メニュー・担当者・Googleカレンダー連携・リマインド配信・変更／キャンセルの設定。</p>
+          <div class="tmeta"><span class="m-who">制作チーム</span><span class="m-eff">目安 半日</span><span class="m-dep">依存 B1・E3（枠の決定）</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">B5</span><span class="tname">流入経路別URL／QR発行</span></div>
+          <p class="tdesc">Instagram用・オープンチャット用で経路を分け、どこから来たか計測する。経路ごとに別シナリオも可。</p>
+          <div class="tmeta"><span class="m-who">制作チーム</span><span class="m-eff">目安 半日</span><span class="m-dep">依存 B2</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">B6</span><span class="tname">フォーム／タグ・リッチメニュー設定</span></div>
+          <p class="tdesc">アンケート回答でタグ付け・分岐。友だちの状態に応じてリッチメニューを切り替える。</p>
+          <div class="tmeta"><span class="m-who">制作チーム</span><span class="m-eff">目安 半日〜1日</span><span class="m-dep">依存 B2</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">B7</span><span class="tname">テスト受信者設定 → テスト送信確認</span></div>
+          <p class="tdesc">全通・全分岐を自分たちで受信して通し確認する。<b>公開前の必須工程</b>。</p>
+          <div class="tmeta"><span class="m-who">制作チーム</span><span class="m-eff">目安 半日</span><span class="m-dep">依存 B3・B4・B6</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">B8</span><span class="tname">既存リストの扱い設計</span></div>
+          <p class="tdesc">すでにいる1,190人への告知の出し方とタグ分け。新規と同じ配信で良いかを決める。</p>
+          <div class="tmeta"><span class="m-who">的場さん</span><span class="m-eff">目安 半日</span><span class="m-dep">依存 B2</span></div>
+        </div>
+      </div>
+
+      <div class="note rv"><b>依存の要点。</b>B1 → B2 → B3 → B7 の一本道。B4（予約カレンダー）は E3（個別相談の枠決め）と連動するので、E1・E3 が遅れると B4 も止まる。</div>
+    </div>
+    <div class="hr"></div>
+  </div>
+</section>
+
+<!-- ========== 6. ワークストリームC ========== -->
+<div class="band">
+<section class="section" id="s6">
+  <div class="wrap">
+    <div class="chapter rv">
+      <div class="chapter-no">06</div>
+      <div class="chapter-txt">
+        <p class="chapter-kicker">WORKSTREAM C</p>
+        <h2>オープンチャット</h2>
+      </div>
+    </div>
+
+    <div class="lane lane-c">
+      <div class="lanehead rv">
+        <span class="lh-id">C</span>
+        <div class="lh-tx">
+          <p class="lh-n">目標1,700人。動画の前に「聞く姿勢」をつくる場</p>
+          <p class="lh-s">音声コラムと文章コラムを配信して、少しずつ温める。動画公開日には、いっしょに観る空気をつくる。</p>
+          <p class="lh-s" style="margin-top:6px"><b>方針変更: ここ数日で開始して、長く続ける。</b>信頼はあとから一気に積めない。<span class="badge now">今週スタート</span></p>
+        </div>
+      </div>
+
+      <div class="fig rv">
+        <p class="scrollhint">← 横にスクロールできます →</p>
+        <div class="hscroll">
+          <svg viewBox="0 0 880 230" width="880" role="img" aria-label="オープンチャット運営サイクルの円環図。コラム配信から反応・質問、企画で盛り上げ、動画公開日の同時視聴、感想が次の教育に、そしてまたコラム配信へ戻る">
+            <defs>
+              <marker id="mArrP" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="#7C3AED"/>
+              </marker>
+            </defs>
+            <rect x="10" y="26" width="150" height="66" rx="10" fill="#F5F0FE" stroke="#7C3AED" stroke-width="2"/>
+            <text x="85" y="54" text-anchor="middle" fill="#5B21B6" font-size="13" font-weight="800">コラム配信</text>
+            <text x="85" y="75" text-anchor="middle" fill="#4A3A6B" font-size="12.5">音声＋文章</text>
+
+            <rect x="180" y="26" width="150" height="66" rx="10" fill="#F5F0FE" stroke="#7C3AED" stroke-width="2"/>
+            <text x="255" y="54" text-anchor="middle" fill="#5B21B6" font-size="13" font-weight="800">反応・質問</text>
+            <text x="255" y="75" text-anchor="middle" fill="#4A3A6B" font-size="12.5">生の声が集まる</text>
+
+            <rect x="350" y="26" width="150" height="66" rx="10" fill="#F5F0FE" stroke="#7C3AED" stroke-width="2"/>
+            <text x="425" y="54" text-anchor="middle" fill="#5B21B6" font-size="13" font-weight="800">企画で盛り上げ</text>
+            <text x="425" y="75" text-anchor="middle" fill="#4A3A6B" font-size="12.5">質問・アンケート</text>
+
+            <rect x="520" y="26" width="150" height="66" rx="10" fill="#EDE4FD" stroke="#7C3AED" stroke-width="2.5"/>
+            <text x="595" y="54" text-anchor="middle" fill="#5B21B6" font-size="13" font-weight="800">公開日に同時視聴</text>
+            <text x="595" y="75" text-anchor="middle" fill="#4A3A6B" font-size="12.5">10/17・20・23</text>
+
+            <rect x="690" y="26" width="150" height="66" rx="10" fill="#F5F0FE" stroke="#7C3AED" stroke-width="2"/>
+            <text x="765" y="54" text-anchor="middle" fill="#5B21B6" font-size="13" font-weight="800">感想が次の教育に</text>
+            <text x="765" y="75" text-anchor="middle" fill="#4A3A6B" font-size="12.5">次のコラムのネタ</text>
+
+            <path d="M162,59 L176,59" stroke="#7C3AED" stroke-width="2.5" marker-end="url(#mArrP)"/>
+            <path d="M332,59 L346,59" stroke="#7C3AED" stroke-width="2.5" marker-end="url(#mArrP)"/>
+            <path d="M502,59 L516,59" stroke="#7C3AED" stroke-width="2.5" marker-end="url(#mArrP)"/>
+            <path d="M672,59 L686,59" stroke="#7C3AED" stroke-width="2.5" marker-end="url(#mArrP)"/>
+            <path d="M765,96 L765,150 L85,150 L85,98" stroke="#7C3AED" stroke-width="2.5" fill="none" stroke-dasharray="7 5" marker-end="url(#mArrP)"/>
+            <text x="425" y="172" text-anchor="middle" fill="#5B21B6" font-size="13" font-weight="800">この輪をくり返して、1,700人の場を温める</text>
+            <text x="425" y="200" text-anchor="middle" fill="#5B6472" font-size="12.5">コラムのネタ元は岩瀬さんの実体験（どん底 → 再起）。姉妹資料の年表がネタ帳になる。</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="grid g2 rv" style="margin-top:18px">
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">C1</span><span class="tname">オープンチャット開設</span><span class="badge now">今週</span></div>
+          <p class="tdesc">名前・説明文・ルール・管理者／共同管理者を決めて開ける。<b>今週じゅうに開ける。</b><span class="badge chk">運営の細部は要確認</span>「オプチャの組み方」は打ち合わせで確定する。</p>
+          <div class="tmeta"><span class="m-who">的場さん</span><span class="m-eff">目安 半日（今週着手）</span><span class="m-dep">依存 なし（先に開けられる）</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">C2</span><span class="tname">集客導線</span></div>
+          <p class="tdesc">LINEとストーリーからオープンチャットへ誘導する。1,700人に届く導線を設計。</p>
+          <div class="tmeta"><span class="m-who">的場さん＋岩瀬さん</span><span class="m-eff">設計 半日＋随時</span><span class="m-dep">依存 C1・B5</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">C3</span><span class="tname">音声コラムの配信設計</span><span class="badge now">今週着手</span></div>
+          <p class="tdesc">テーマ一覧をつくる → 収録 → 配信スケジュール（週◯本）を決める。声のほうが人柄が伝わる。<b>1本目は今週出す。</b></p>
+          <div class="tmeta"><span class="m-who">岩瀬さん＋的場さん</span><span class="m-eff">設計 半日＋1本30〜60分（今週着手・以降ずっと継続）</span><span class="m-dep">依存 C1</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">C4</span><span class="tname">文章コラムの配信設計</span><span class="badge now">今週着手</span></div>
+          <p class="tdesc">テーマ一覧 → 執筆 → 配信。あとから読み返せるのが文章の強み。<b>こちらも今週から出しはじめる。</b></p>
+          <div class="tmeta"><span class="m-who">岩瀬さん＋的場さん</span><span class="m-eff">1本1〜2時間（今週着手・以降ずっと継続）</span><span class="m-dep">依存 C1</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">C5</span><span class="tname">盛り上げ運営</span></div>
+          <p class="tdesc">質問企画・アンケート・モデレーション（荒らし対応）。静かな場を放置しない。</p>
+          <div class="tmeta"><span class="m-who">制作チーム</span><span class="m-eff">毎日少しずつ</span><span class="m-dep">依存 C1</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">C6</span><span class="tname">動画公開日の連動企画</span></div>
+          <p class="tdesc">公開直後に感想を促す投稿。いっしょに観ている空気をつくる。</p>
+          <div class="tmeta"><span class="m-who">的場さん</span><span class="m-eff">各公開日</span><span class="m-dep">依存 C1・D7（公開）</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="height:36px"></div>
+  </div>
+</section>
+</div>
+
+<!-- ========== 7. ワークストリームD ========== -->
+<section class="section" id="s7">
+  <div class="wrap">
+    <div class="chapter rv">
+      <div class="chapter-no">07</div>
+      <div class="chapter-txt">
+        <p class="chapter-kicker">WORKSTREAM D ／ 最重要</p>
+        <h2>ドキュメンタリー動画制作</h2>
+      </div>
+    </div>
+
+    <div class="lane lane-d">
+      <div class="lanehead rv">
+        <span class="lh-id">D</span>
+        <div class="lh-tx">
+          <p class="lh-n">3本 × 約15分。ここが遅れると全体が遅れる</p>
+          <p class="lh-s">このレーンだけは「巻き返し」がききにくい。撮影が終わらないと編集が始まらず、編集が終わらないと公開できない。</p>
+        </div>
+      </div>
+
+      <h3 class="rv">7-1. 制作パイプライン</h3>
+      <div class="fig rv">
+        <p class="scrollhint">← 横にスクロールできます →</p>
+        <div class="hscroll">
+          <div class="flow" style="min-width:900px">
+            <div class="fnode"><span class="fn-k">D1</span><span class="fn-t">3人打ち合わせ</span><span class="fn-s">的場×岩瀬×磯貝</span></div>
+            <i class="farr">▶</i>
+            <div class="fnode"><span class="fn-k">D2</span><span class="fn-t">構成・質問項目</span><span class="fn-s">3本の役割分け</span></div>
+            <i class="farr">▶</i>
+            <div class="fnode"><span class="fn-k">D3</span><span class="fn-t">撮影準備</span><span class="fn-s">場所・許可・機材</span></div>
+            <i class="farr">▶</i>
+            <div class="fnode"><span class="fn-k">D4</span><span class="fn-t">撮影（岡崎）</span><span class="fn-s">まとめ撮り前提</span></div>
+            <i class="farr">▶</i>
+            <div class="fnode"><span class="fn-k">D5</span><span class="fn-t">編集</span><span class="fn-s">カット・テロップ</span></div>
+            <i class="farr">▶</i>
+            <div class="fnode"><span class="fn-k">D6</span><span class="fn-t">試写・修正</span><span class="fn-s">往復2回想定</span></div>
+            <i class="farr">▶</i>
+            <div class="fflag"><span class="fn-k">D7</span><span class="fn-t">公開 ×3本</span><span class="fn-s">10/17・20・23</span></div>
+          </div>
+        </div>
+        <p class="fig-cap">撮影は岡崎市内で完結する見込み。9/15以降は平日昼が使える。自営業の営業日は夜のみ稼働（昼間は空き・対象の曜日は要確認）／11月のライブ1日はNG。<span class="badge src">出典: 9/3会議</span></p>
+      </div>
+
+      <div class="grid g2 rv" style="margin-top:18px">
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">D1</span><span class="tname">3人打ち合わせ（的場×岩瀬×磯貝）</span></div>
+          <p class="tdesc">インタビュー形式・質問項目・撮影場所を確定する。磯貝さんがインタビュアーという案。<span class="badge chk">打ち合わせで決定</span></p>
+          <div class="tmeta"><span class="m-who">3人（的場・岩瀬・磯貝）</span><span class="m-eff">半日 × 1〜2回</span><span class="m-dep">依存 なし ／ <b>全体の起点</b></span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">D2</span><span class="tname">構成・軽い台本づくり</span></div>
+          <p class="tdesc">3本それぞれで使うエピソードの配分を決める（どん底／転機／未来）。</p>
+          <div class="tmeta"><span class="m-who">的場さん</span><span class="m-eff">目安 2〜3日</span><span class="m-dep">依存 D1</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">D3</span><span class="tname">撮影準備</span></div>
+          <p class="tdesc">撮影候補地の下見（公園ほか・打ち合わせで確定）・使用許可の確認・機材・移動の段取り。</p>
+          <div class="tmeta"><span class="m-who">制作チーム</span><span class="m-eff">目安 1〜2日</span><span class="m-dep">依存 D1</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">D4</span><span class="tname">撮影</span></div>
+          <p class="tdesc">インタビュー＋密着カット。岡崎市内で完結見込み。岩瀬さんの空き日に合わせる。</p>
+          <div class="tmeta"><span class="m-who">制作チーム＋岩瀬さん</span><span class="m-eff">目安 1〜3日</span><span class="m-dep">依存 D2・D3</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">D5</span><span class="tname">編集</span></div>
+          <p class="tdesc">カット・テロップ・BGM・カラー。3本ぶん。いちばん時間を食う工程。</p>
+          <div class="tmeta"><span class="m-who">制作チーム</span><span class="m-eff">1本あたり 編集1.5週（最短）〜3週（標準）<span class="badge src">相場値</span></span><span class="m-dep">依存 D4</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">D6</span><span class="tname">試写・修正の往復</span></div>
+          <p class="tdesc">的場さん・岩瀬さんがチェック → 修正（往復2回想定）。ここは事前に回数を決めておくと伸びない。</p>
+          <div class="tmeta"><span class="m-who">全員</span><span class="m-eff">1往復 0.5週／2往復なら1〜2週<span class="badge src">相場値</span></span><span class="m-dep">依存 D5</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">D7</span><span class="tname">公開準備</span></div>
+          <p class="tdesc">サムネ・タイトル・説明文・公開設定（10/17・20・23）。</p>
+          <div class="tmeta"><span class="m-who">制作チーム</span><span class="m-eff">各 半日</span><span class="m-dep">依存 D6</span></div>
+        </div>
+      </div>
+
+      <h3 class="rv">7-2. 期間の目安（15分動画1本あたり）</h3>
+      <p class="lead rv">「15分の動画って、どれくらいかかるの?」の答え。制作会社が公開している相場を3つのレンジに整理した。<span class="badge est">概算・目安</span></p>
+
+      <div class="fig rv">
+        <div class="pbar">
+          <div class="pbar-row">
+            <p class="pbar-ttl"><span class="pb-n">最短</span><span class="pb-v">3週間</span></p>
+            <div class="pbar-track">
+              <div class="pb-grid"></div>
+              <!-- 内訳の合計は 7日+1日+10.5日+3.5日=22日。各セグメントは22日に対する比率（＝目盛の1週と一致させる） -->
+              <div class="pbar-fill" style="width:26.19%">
+                <i class="sg-plan" style="width:31.82%"></i><i class="sg-shoot" style="width:4.55%"></i><i class="sg-edit" style="width:47.73%"></i><i class="sg-fix" style="width:15.90%"></i>
+              </div>
+            </div>
+            <p class="pbar-brk">企画・構成 1週 ＋ 撮影 1日 ＋ 編集 1.5週 ＋ 修正1往復 0.5週</p>
+          </div>
+
+          <div class="pbar-row">
+            <p class="pbar-ttl"><span class="pb-n">標準</span><span class="pb-v">6〜8週間（約1.5〜2ヶ月）</span></p>
+            <div class="pbar-track">
+              <div class="pb-grid"></div>
+              <div class="pbar-fill" style="width:50%">
+                <i class="sg-plan" style="width:33%"></i><i class="sg-shoot" style="width:17%"></i><i class="sg-edit" style="width:50%"></i>
+              </div>
+              <div class="pbar-ext" style="left:50%;width:16.6%"></div>
+            </div>
+            <p class="pbar-brk">企画・構成 2〜3週 ＋ 撮影準備・ロケハン＋撮影 1〜2週 ＋ 編集 3週 ＋ MA・試写・修正 1〜2週（斜線部）</p>
+          </div>
+
+          <div class="pbar-row">
+            <p class="pbar-ttl"><span class="pb-n">余裕</span><span class="pb-v">12週間（3ヶ月）</span></p>
+            <div class="pbar-track">
+              <div class="pb-grid"></div>
+              <div class="pbar-fill" style="width:100%">
+                <i class="sg-any" style="width:100%"></i>
+              </div>
+            </div>
+            <p class="pbar-brk">標準に「修正2〜3往復」「複数ロケ地・複数日撮影」「天候待ち」を足した幅。<b>工程の内訳（何週ずつか）は出典に書かれていない</b>ため、ここは工程色で塗り分けず中立の斜線にした。<span class="badge est">工程配分は案件次第</span></p>
+          </div>
+
+          <div class="pbar-scale">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+          </div>
+          <p class="pbar-brk" style="text-align:right;color:#5B6472">単位: 週</p>
+
+          <div class="legend">
+            <span><i class="sg-plan"></i>企画・構成</span>
+            <span><i class="sg-shoot"></i>撮影準備・撮影</span>
+            <span><i class="sg-edit"></i>編集</span>
+            <span><i class="sg-fix"></i>試写・修正</span>
+            <span><i class="sg-any"></i>工程の内訳が出典に無い範囲（配分は案件次第）</span>
+          </div>
+        </div>
+        <p class="fig-cap">出典: LOCUS／アートワークス／JPC／トック企画／むびるプラス（制作会社の公開解説記事）。</p>
+      </div>
+
+      <div class="grid g2 rv" style="margin-top:16px">
+        <div class="card">
+          <h4>密着型は、インタビュー型より +1〜2週間</h4>
+          <p>インタビュー主体（15分）の納期が 2〜3週間に対し、<b>1日密着型は3〜4週間以上</b>。撮影が丸1日（8〜10時間）×日数分になり、素材が増えて、プレビュー・文字起こし・構成の手間が伸びるため。</p>
+          <p style="margin-top:8px;color:#5B6472;font-size:12.5px">出典: むびるプラス（費用・納期の一覧表）</p>
+        </div>
+        <div class="card">
+          <h4>撮影当日の中身（1日の内訳）</h4>
+          <div class="chips" style="margin-top:4px">
+            <span class="chip">機材搬入・セッティング 1〜2時間</span>
+            <span class="chip">リハーサル 30分〜1時間</span>
+            <span class="chip d">本番撮影 3〜6時間</span>
+            <span class="chip">撤収 1時間</span>
+          </div>
+          <p style="margin-top:10px">「半日で3本撮る」は現実的ではない。まとめ撮りでも本番3〜6時間を見ておく。</p>
+          <p style="margin-top:8px;color:#5B6472;font-size:12.5px">出典: LOCUS（制作スケジュール解説）</p>
+        </div>
+      </div>
+
+      <h4 class="sub rv">今回は3本。まとめ撮り＋並行編集の前提で合算すると</h4>
+      <div class="fig rv">
+        <div class="pbar">
+          <div class="pbar-row" style="margin-bottom:6px">
+            <p class="pbar-ttl"><span class="pb-n">3本合算（最短レンジを積み上げた場合）</span><span class="pb-v">約4週間</span><span class="badge est">概算・出典値の単純合算</span><span class="badge chk">インタビュー型基準</span></p>
+            <p class="pbar-brk" style="margin:0 0 6px"><b>※この「約4週」はインタビュー型の相場を基準にした数字。</b>密着撮影を増やす場合は <b>+1〜2週</b> になる（＝約5〜6週。下の警告カードの前提条件とあわせて読む）。</p>
+            <div class="pbar-track" style="height:38px">
+              <div class="pb-grid"></div>
+              <div class="pbar-fill" style="width:34%">
+                <i class="sg-plan" style="width:24%"></i><i class="sg-shoot" style="width:8%"></i><i class="sg-edit" style="width:44%"></i><i class="sg-fix" style="width:24%"></i>
+              </div>
+              <div class="marker-line" style="left:41.7%"></div>
+              <div class="marker-cap" style="left:41.7%;top:auto;bottom:3px">10/17</div>
+            </div>
+            <div class="pbar-scale dates">
+              <span>9/26</span><span>10/10</span><span>10/24</span><span>11/7</span><span>11/21</span><span>12/5</span>
+            </div>
+            <p class="pbar-brk" style="text-align:right;color:#5B6472">起点＝2026-09-12（この資料の作成日）／1目盛＝1週</p>
+          </div>
+          <p class="pbar-brk">内訳（すべて上の相場値から）: <b>共通の企画・構成 1週</b> ＋ <b>3本まとめ撮り 1〜2日</b> ＋ <b>①編集1.5週＋修正0.5週</b> ＋ <b>②③は並行編集で3日おきに公開＝+約0.9週</b> ＝ 合計 約4週間。</p>
+        </div>
+        <p class="fig-cap">赤い線が10/17（＝9/12から5週間後）。合算約4週なら理屈のうえでは入るが、余白は約1週しかない。密着撮影を増やして+1〜2週になると、この余白は消える。</p>
+      </div>
+
+      <div class="warn rv">
+        <p class="wt">リスク: 「9月下旬〜10月上旬に撮影 → 10/17初回公開」はギリギリの設計</p>
+        <p>撮影終了を10/5とすると、動画①の編集にあてられるのは <b>約12日</b>。業界の<b>最短レンジ（編集1.5週＝約11日）とほぼ同じ</b>で、企画・構成の時間がほぼゼロの前提になる。密着型の「+1〜2週間」を足すと、このままでは入らない。成立させるには、次の4つが前提になる。</p>
+        <ul>
+          <li><b>① 撮影を9月下旬に前倒しし、3本を同日〜2日でまとめ撮りする</b></li>
+          <li><b>② 動画①を先に仕上げ、②③は並行して編集する</b></li>
+          <li><b>③ テロップは全文入れず、要所のみにする</b>（フルテロップは工数が跳ねる）</li>
+          <li><b>④ 修正の往復は1回に限定する</b>（回数を先に決めておく）</li>
+        </ul>
+        <p style="margin-top:10px">この前提が崩れる場合は、<b>公開日の後ろ倒しを検討する</b>。<span class="badge chk">要確認</span></p>
+      </div>
+      <div class="note rv"><b>短縮に効くと書かれていたこと。</b>テンプレートの活用／著作権フリー音源の活用（オリジナル楽曲制作の2〜3週を省ける）／フルテロップをやめて重要部分のみにする。<br>逆に<b>動かしにくい</b>のは編集日数とMA日数。動かしやすいのは企画検討期間・チェック回数・撮影候補日。ここを削る判断は早めに。</div>
+    </div>
+    <div class="hr"></div>
+  </div>
+</section>
+
+<!-- ========== 8. ワークストリームE ========== -->
+<div class="band">
+<section class="section" id="s8">
+  <div class="wrap">
+    <div class="chapter rv">
+      <div class="chapter-no">08</div>
+      <div class="chapter-txt">
+        <p class="chapter-kicker">WORKSTREAM E</p>
+        <h2>セールス・クロージング</h2>
+      </div>
+    </div>
+
+    <div class="lane lane-e">
+      <div class="lanehead rv">
+        <span class="lh-id">E</span>
+        <div class="lh-tx">
+          <p class="lh-n">動画③のあと、10月下旬に一気に走る</p>
+          <p class="lh-s">ここは短期集中。だからこそ、前もって決めておくもの（オファー・導線・相談枠）が多い。</p>
+        </div>
+      </div>
+
+      <div class="fig rv">
+        <p class="scrollhint">← 横にスクロールできます →</p>
+        <div class="hscroll">
+          <div class="flow" style="min-width:900px">
+            <div class="fnode"><span class="fn-k">起点</span><span class="fn-t">動画③ 10/23</span><span class="fn-s">感情が最高潮</span></div>
+            <i class="farr">▶</i>
+            <div class="fnode"><span class="fn-k">E2</span><span class="fn-t">募集開始</span><span class="fn-s">案内ページ・案内文</span></div>
+            <i class="farr">▶</i>
+            <div class="fnode"><span class="fn-k">E3・B4</span><span class="fn-t">個別相談</span><span class="fn-s">プロラインで日程調整</span></div>
+            <i class="farr">▶</i>
+            <div class="fnode"><span class="fn-k">E4</span><span class="fn-t">クロージング</span><span class="fn-s">10月下旬に集中</span></div>
+            <i class="farr">▶</i>
+            <div class="fflag"><span class="fn-k">E6</span><span class="fn-t">10月末クローズ</span><span class="fn-s">締めの告知</span></div>
+          </div>
+        </div>
+        <p class="fig-cap">個別相談の予約は B4（プロラインの予約カレンダー）に載せる。E3で枠を決めないとB4が作れない。E5（本人のZoomセミナー）は検討中のため、この流れには入れていない。</p>
+      </div>
+
+      <div class="grid g2 rv" style="margin-top:18px">
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">E1</span><span class="tname">オファー確定</span></div>
+          <p class="tdesc">価格・特典・定員・締切を決める。ここが決まらないと案内文も相談枠も作れない。<span class="badge chk">会議未確定・要打ち合わせ</span></p>
+          <div class="tmeta"><span class="m-who">的場さん</span><span class="m-eff">目安 1日</span><span class="m-dep">依存 なし ／ <b>E2・E3 の前提</b></span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">E2</span><span class="tname">販売導線の準備</span></div>
+          <p class="tdesc">案内ページ、または案内文＋申込フォームを用意する。</p>
+          <div class="tmeta"><span class="m-who">制作チーム</span><span class="m-eff">目安 2〜3日</span><span class="m-dep">依存 E1</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">E3</span><span class="tname">個別相談の枠設計</span></div>
+          <p class="tdesc">相談枠の日程・時間帯・担当を決め、B4（プロラインの予約カレンダー）に反映する。</p>
+          <div class="tmeta"><span class="m-who">的場さん</span><span class="m-eff">目安 半日</span><span class="m-dep">依存 E1 ／ <b>B4の前提</b></span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">E4</span><span class="tname">セールス面談・クロージング</span></div>
+          <p class="tdesc">個別相談の実施。10月下旬に集中する。ここが売上の出口。</p>
+          <div class="tmeta"><span class="m-who">的場さん＋セールスチーム</span><span class="m-eff">期間中 毎日</span><span class="m-dep">依存 E2・E3・B4・B7</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">E5</span><span class="tname">岩瀬さん本人のZoomセミナー</span><span class="badge chk">検討・打ち合わせで確定</span></div>
+          <p class="tdesc">クロージングの前に、岩瀬さん本人が話すZoomセミナーを開く案。<b>やるかどうかは、まだ決まっていない。</b>日程・内容・回数は打ち合わせで確定する。</p>
+          <div class="tmeta"><span class="m-who">岩瀬さん＋的場さん</span><span class="m-eff">未定（実施するなら準備1〜2日）</span><span class="m-dep">依存 E1（オファーが決まってから）</span></div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-h"><span class="tid">E6</span><span class="tname">クローズ処理</span></div>
+          <p class="tdesc">10月末で募集終了。締めの告知を出す。</p>
+          <div class="tmeta"><span class="m-who">的場さん</span><span class="m-eff">目安 半日</span><span class="m-dep">依存 E4</span></div>
+        </div>
+      </div>
+
+      <div class="note rv">E5（本人のZoomセミナー）は<b>やると決まったものではない</b>。3人の打ち合わせで「やるか／やらないか」から決める。<span class="badge chk">要確認</span></div>
+    </div>
+    <div style="height:36px"></div>
+  </div>
+</section>
+</div>
+
+<!-- ========== 9. 依存関係マップ ========== -->
+<section class="section" id="s9">
+  <div class="wrap">
+    <div class="chapter rv">
+      <div class="chapter-no">09</div>
+      <div class="chapter-txt">
+        <p class="chapter-kicker">CRITICAL PATH</p>
+        <h2>依存関係マップ</h2>
+      </div>
+    </div>
+    <p class="lead rv">どのタスクが、どのタスクを待っているか。<b>金色の太い線がクリティカルパス</b>＝ここが1日遅れると、全体が1日遅れる道。</p>
+
+    <div class="fig rv">
+      <p class="scrollhint">← 横にスクロールできます →</p>
+      <div class="hswrap">
+      <span class="hs-arrow" aria-hidden="true">▶</span>
+      <div class="hscroll fit">
+        <svg viewBox="0 0 930 538" width="930" role="img" aria-label="5レーン（A発信・B基盤・D動画・Cオプチャ・Eセールス）のタスク依存関係マップ。AレーンはA6リスト誘導台本からA7誘導動画で、他を待たずに今週動かせる。金色の太線がD1からD2、D4、D5、D6を通り10月17日公開へ至るクリティカルパス。緑線はB5・B7の基盤からE4個別相談への依存">
+          <defs>
+            <marker id="aG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C9A227"/></marker>
+            <marker id="aR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#DC2626"/></marker>
+            <marker id="aS" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#98A2B3"/></marker>
+            <marker id="aO" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#EA580C"/></marker>
+          </defs>
+
+          <text x="12" y="22" fill="#5B6472" font-size="12.5">← 左から右へ、時間の流れ。矢印の先が「待っている側」。</text>
+
+          <!-- A レーン（最重要・待ち無し） -->
+          <rect x="8" y="38" width="914" height="80" rx="10" fill="#FFF4EC"/>
+          <text x="16" y="66" fill="#9A3412" font-size="15" font-weight="800">A</text>
+          <text x="16" y="86" fill="#9A3412" font-size="12.5" font-weight="700">発信</text>
+          <text x="150" y="49" text-anchor="middle" fill="#9A3412" font-size="12.5" font-weight="800">早急・今週から</text>
+          <rect x="90" y="52" width="120" height="52" rx="9" fill="#FFFFFF" stroke="#EA580C" stroke-width="3"/>
+          <text x="150" y="72" text-anchor="middle" fill="#9A3412" font-size="12.5" font-weight="800">A6</text>
+          <text x="150" y="92" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">リスト誘導台本</text>
+          <rect x="230" y="52" width="120" height="52" rx="9" fill="#FFFFFF" stroke="#EA580C" stroke-width="3"/>
+          <text x="290" y="72" text-anchor="middle" fill="#9A3412" font-size="12.5" font-weight="800">A7</text>
+          <text x="290" y="92" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">リスト誘導動画</text>
+          <path d="M212,78 L226,78" stroke="#EA580C" stroke-width="3" marker-end="url(#aO)"/>
+          <text x="366" y="82" fill="#9A3412" font-size="12.5" font-weight="700">待つものが無い＝いちばん早く動かせる（リード獲得を増やす）</text>
+
+          <g transform="translate(0,88)">
+          <!-- レーン帯 -->
+          <rect x="8" y="38" width="914" height="80" rx="10" fill="#EFFAF3"/>
+          <rect x="8" y="126" width="914" height="80" rx="10" fill="#FFFBEC"/>
+          <rect x="8" y="214" width="914" height="80" rx="10" fill="#F5F0FE"/>
+          <rect x="8" y="302" width="914" height="80" rx="10" fill="#FFF3F3"/>
+
+          <text x="16" y="66" fill="#0F7A37" font-size="15" font-weight="800">B</text>
+          <text x="16" y="86" fill="#0F7A37" font-size="12.5" font-weight="700">基盤</text>
+          <text x="16" y="154" fill="#8A6E13" font-size="15" font-weight="800">D</text>
+          <text x="16" y="174" fill="#8A6E13" font-size="12.5" font-weight="700">動画</text>
+          <text x="16" y="242" fill="#5B21B6" font-size="15" font-weight="800">C</text>
+          <text x="16" y="262" fill="#5B21B6" font-size="12.5" font-weight="700">オプチャ</text>
+          <text x="16" y="330" fill="#A11B1B" font-size="15" font-weight="800">E</text>
+          <text x="16" y="350" fill="#A11B1B" font-size="12.5" font-weight="700">セールス</text>
+
+          <!-- B レーン -->
+          <rect x="90" y="52" width="120" height="52" rx="9" fill="#FFFFFF" stroke="#16A34A" stroke-width="2"/>
+          <text x="150" y="72" text-anchor="middle" fill="#0F7A37" font-size="12.5" font-weight="800">B1</text>
+          <text x="150" y="92" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">プロライン開設</text>
+          <rect x="230" y="52" width="120" height="52" rx="9" fill="#FFFFFF" stroke="#16A34A" stroke-width="2"/>
+          <text x="290" y="72" text-anchor="middle" fill="#0F7A37" font-size="12.5" font-weight="800">B2</text>
+          <text x="290" y="92" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">シナリオ設計</text>
+          <rect x="370" y="52" width="120" height="52" rx="9" fill="#FFFFFF" stroke="#16A34A" stroke-width="2"/>
+          <text x="430" y="72" text-anchor="middle" fill="#0F7A37" font-size="12.5" font-weight="800">B3</text>
+          <text x="430" y="92" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">配信原稿</text>
+          <rect x="510" y="52" width="120" height="52" rx="9" fill="#FFFFFF" stroke="#16A34A" stroke-width="2"/>
+          <text x="570" y="72" text-anchor="middle" fill="#0F7A37" font-size="12.5" font-weight="800">B5・B7</text>
+          <text x="570" y="92" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">経路URL・テスト</text>
+          <path d="M212,78 L226,78" stroke="#98A2B3" stroke-width="2" marker-end="url(#aS)"/>
+          <path d="M352,78 L366,78" stroke="#98A2B3" stroke-width="2" marker-end="url(#aS)"/>
+          <path d="M492,78 L506,78" stroke="#98A2B3" stroke-width="2" marker-end="url(#aS)"/>
+
+          <!-- D レーン（クリティカルパス） -->
+          <text x="150" y="137" text-anchor="middle" fill="#8A6E13" font-size="12.5" font-weight="800">最優先で着手</text>
+          <rect x="90" y="140" width="120" height="52" rx="9" fill="#FFF8E2" stroke="#C9A227" stroke-width="3"/>
+          <text x="150" y="160" text-anchor="middle" fill="#8A6E13" font-size="12.5" font-weight="800">D1</text>
+          <text x="150" y="180" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">3人打合せ</text>
+          <rect x="230" y="140" width="120" height="52" rx="9" fill="#FFF8E2" stroke="#C9A227" stroke-width="3"/>
+          <text x="290" y="160" text-anchor="middle" fill="#8A6E13" font-size="12.5" font-weight="800">D2</text>
+          <text x="290" y="180" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">構成・台本</text>
+          <rect x="370" y="140" width="120" height="52" rx="9" fill="#FFF8E2" stroke="#C9A227" stroke-width="3"/>
+          <text x="430" y="160" text-anchor="middle" fill="#8A6E13" font-size="12.5" font-weight="800">D4</text>
+          <text x="430" y="180" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">撮影</text>
+          <rect x="510" y="140" width="120" height="52" rx="9" fill="#FFF8E2" stroke="#C9A227" stroke-width="3"/>
+          <text x="570" y="160" text-anchor="middle" fill="#8A6E13" font-size="12.5" font-weight="800">D5</text>
+          <text x="570" y="180" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">編集</text>
+          <rect x="650" y="140" width="120" height="52" rx="9" fill="#FFF8E2" stroke="#C9A227" stroke-width="3"/>
+          <text x="710" y="160" text-anchor="middle" fill="#8A6E13" font-size="12.5" font-weight="800">D6</text>
+          <text x="710" y="180" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">試写・修正</text>
+          <rect x="790" y="140" width="120" height="52" rx="9" fill="#101828" stroke="#C9A227" stroke-width="3"/>
+          <text x="850" y="160" text-anchor="middle" fill="#E7CE72" font-size="12.5" font-weight="800">D7</text>
+          <text x="850" y="180" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="700">10/17 公開</text>
+          <path d="M212,166 L226,166" stroke="#C9A227" stroke-width="4" marker-end="url(#aG)"/>
+          <path d="M352,166 L366,166" stroke="#C9A227" stroke-width="4" marker-end="url(#aG)"/>
+          <path d="M492,166 L506,166" stroke="#C9A227" stroke-width="4" marker-end="url(#aG)"/>
+          <path d="M632,166 L646,166" stroke="#C9A227" stroke-width="4" marker-end="url(#aG)"/>
+          <path d="M772,166 L786,166" stroke="#C9A227" stroke-width="4" marker-end="url(#aG)"/>
+
+          <!-- C レーン -->
+          <rect x="90" y="228" width="120" height="52" rx="9" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2"/>
+          <text x="150" y="248" text-anchor="middle" fill="#5B21B6" font-size="12.5" font-weight="800">C1</text>
+          <text x="150" y="268" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">オプチャ開設</text>
+          <rect x="790" y="228" width="120" height="52" rx="9" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2"/>
+          <text x="850" y="248" text-anchor="middle" fill="#5B21B6" font-size="12.5" font-weight="800">C6</text>
+          <text x="850" y="268" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">連動企画</text>
+          <path d="M212,254 L784,254" stroke="#7C3AED" stroke-width="2" marker-end="url(#aS)" stroke-dasharray="8 5"/>
+          <text x="470" y="246" text-anchor="middle" fill="#5B21B6" font-size="12.5" font-weight="700">開設していないと、公開日に何もできない</text>
+          <path d="M850,194 L850,220" stroke="#7C3AED" stroke-width="3" marker-end="url(#aS)"/>
+
+          <!-- E レーン -->
+          <rect x="90" y="316" width="120" height="52" rx="9" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
+          <text x="150" y="336" text-anchor="middle" fill="#A11B1B" font-size="12.5" font-weight="800">E1</text>
+          <text x="150" y="356" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">オファー確定</text>
+          <rect x="230" y="316" width="120" height="52" rx="9" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
+          <text x="290" y="336" text-anchor="middle" fill="#A11B1B" font-size="12.5" font-weight="800">E2・E3</text>
+          <text x="290" y="356" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">導線・相談枠</text>
+          <rect x="650" y="316" width="120" height="52" rx="9" fill="#FFECEC" stroke="#DC2626" stroke-width="3"/>
+          <text x="710" y="336" text-anchor="middle" fill="#A11B1B" font-size="12.5" font-weight="800">E4</text>
+          <text x="710" y="356" text-anchor="middle" fill="#182230" font-size="12.5" font-weight="700">個別相談</text>
+          <path d="M212,342 L226,342" stroke="#98A2B3" stroke-width="2" marker-end="url(#aS)"/>
+          <path d="M352,342 L644,342" stroke="#98A2B3" stroke-width="2" marker-end="url(#aS)"/>
+
+          <!-- 横断: B5・B7 → E4 -->
+          <path d="M630,78 L640,78 L640,342 L644,342" stroke="#16A34A" stroke-width="2.5" fill="none" marker-end="url(#aS)"/>
+          <text x="656" y="300" fill="#0F7A37" font-size="12.5" font-weight="700">基盤ができていないと相談に運べない</text>
+
+          <!-- 凡例 -->
+          <rect x="8" y="398" width="914" height="30" rx="8" fill="#F7F8FA"/>
+          <rect x="24" y="409" width="30" height="6" rx="3" fill="#C9A227"/>
+          <text x="62" y="418" fill="#475467" font-size="12.5">金の太線＝クリティカルパス</text>
+          <rect x="264" y="409" width="30" height="6" rx="3" fill="#16A34A"/>
+          <text x="302" y="418" fill="#475467" font-size="12.5">緑＝基盤（B）が先に要るところ</text>
+          <rect x="560" y="410" width="30" height="4" rx="2" fill="#98A2B3"/>
+          <text x="598" y="418" fill="#475467" font-size="12.5">グレー＝ふつうの依存</text>
+          </g>
+        </svg>
+      </div>
+      </div>
+    </div>
+
+    <div class="grid g2 rv" style="margin-top:16px">
+      <div class="card lane lane-d" style="border-left:5px solid var(--lane)">
+        <h4>いま一番の急所: D1（3人打ち合わせ）</h4>
+        <p>D1 が動かないと D2 も D4 も動かず、クリティカルパス全部が止まる。<b>この資料でたった1つだけやるなら、D1 の日程を今日決めること。</b></p>
+      </div>
+      <div class="card lane lane-a" style="border-left:5px solid var(--lane)">
+        <h4>いま一番の伸びしろ: A6・A7（リスト誘導）</h4>
+        <p>リード獲得がファネルの最上流。<b>A6（台本）→ A7（誘導動画）を今週つくれば、そのぶん母数が増える。</b>ここは待つ理由がないので、早急に着手する。</p>
+      </div>
+    </div>
+
+    <ul class="list rv" style="margin-top:18px">
+      <li><b>D1 → D2 → D4 → D5 → D6 → 10/17公開</b>がクリティカルパス。ここだけは前倒しで進める。</li>
+      <li><b>B1 → B2 → B3 → B5・B7</b>（LINE基盤）は E4（個別相談）の前提。テスト送信まで終わって初めて「使える」。</li>
+      <li><b>C1（オプチャ開設）</b>は C6（公開日の連動企画）の前提。開設が遅れると、公開日の盛り上げができない。</li>
+      <li><b>E1（オファー確定）</b>は E2・E3 の前提。ここが未確定のままだと、案内文も相談枠も作れない。</li>
+      <li><b>A6 → A7</b>（リスト誘導の台本 → 誘導動画）は依存が浅く、今週すぐ動かせる。<span class="badge now">早急</span></li>
+    </ul>
+    <div style="height:36px"></div>
+  </div>
+</section>
+
+<!-- ========== 10. 役割分担ボード ========== -->
+<div class="band">
+<section class="section" id="s10">
+  <div class="wrap">
+    <div class="chapter rv">
+      <div class="chapter-no">10</div>
+      <div class="chapter-txt">
+        <p class="chapter-kicker">ROLES</p>
+        <h2>役割分担ボード</h2>
+      </div>
+    </div>
+    <p class="lead rv">岩瀬さんは「発信と、素直な気持ちで話すこと」に集中してほしい。裏側（B基盤・D編集・E導線）は僕らがやる。</p>
+
+    <div class="grid g4 rv">
+      <div class="rolecard who-i">
+        <div class="rc-top">
+          <p class="rc-n">岩瀬さん</p>
+          <p class="rc-r">主人公。発信と、話すこと</p>
+        </div>
+        <div class="rc-b">
+          <p class="rc-cnt">担当タスク 13件</p>
+          <div class="chips">
+            <span class="chip a">A1</span><span class="chip a">A2</span><span class="chip a">A3</span><span class="chip a">A5</span><span class="chip a">A6</span><span class="chip a">A7</span>
+            <span class="chip c">C2</span><span class="chip c">C3</span><span class="chip c">C4</span>
+            <span class="chip d">D1</span><span class="chip d">D4</span><span class="chip d">D6</span>
+            <span class="chip e">E5</span>
+          </div>
+          <p style="margin:12px 0 0;font-size:13px;color:#475467;line-height:1.8">毎日の発信（A2・A3）とコラム（C3・C4）、そして撮影（D4）。ここだけは代わりがいない。今週は <b>A6・A7（リスト誘導の台本と動画）</b> が最優先。</p>
+        </div>
+      </div>
+
+      <div class="rolecard who-m">
+        <div class="rc-top">
+          <p class="rc-n">的場さん</p>
+          <p class="rc-r">設計・セールス・判断</p>
+        </div>
+        <div class="rc-b">
+          <p class="rc-cnt">担当タスク 21件</p>
+          <div class="chips">
+            <span class="chip a">A1</span><span class="chip a">A4</span><span class="chip a">A5</span><span class="chip a">A6</span><span class="chip a">A8</span>
+            <span class="chip b">B2</span><span class="chip b">B3</span><span class="chip b">B8</span>
+            <span class="chip c">C1</span><span class="chip c">C2</span><span class="chip c">C3</span><span class="chip c">C4</span><span class="chip c">C6</span>
+            <span class="chip d">D1</span><span class="chip d">D2</span><span class="chip d">D6</span>
+            <span class="chip e">E1</span><span class="chip e">E3</span><span class="chip e">E4</span><span class="chip e">E5</span><span class="chip e">E6</span>
+          </div>
+          <p style="margin:12px 0 0;font-size:13px;color:#475467;line-height:1.8">いちばん抱えている。C1（オプチャ開設）は今週、E1（オファー確定）は他レーンの前提なので、先に片づけたい。</p>
+        </div>
+      </div>
+
+      <div class="rolecard who-t">
+        <div class="rc-top">
+          <p class="rc-n">制作チーム</p>
+          <p class="rc-r">セールスチームの仲間</p>
+        </div>
+        <div class="rc-b">
+          <p class="rc-cnt">担当タスク 14件</p>
+          <div class="chips">
+            <span class="chip a">A7</span>
+            <span class="chip b">B1</span><span class="chip b">B3</span><span class="chip b">B4</span><span class="chip b">B5</span><span class="chip b">B6</span><span class="chip b">B7</span>
+            <span class="chip c">C5</span>
+            <span class="chip d">D3</span><span class="chip d">D4</span><span class="chip d">D5</span><span class="chip d">D6</span><span class="chip d">D7</span>
+            <span class="chip e">E2</span>
+          </div>
+          <p style="margin:12px 0 0;font-size:13px;color:#475467;line-height:1.8">D5（編集）が最大の山。まずは A7（リスト誘導動画）を早急に。B1〜B7の構築を9月中に終わらせておくと、10月に余裕ができる。</p>
+        </div>
+      </div>
+
+      <div class="rolecard who-s">
+        <div class="rc-top">
+          <p class="rc-n">磯貝さん</p>
+          <p class="rc-r">インタビュアー案<span class="badge chk" style="margin-left:6px">協力要請中</span></p>
+        </div>
+        <div class="rc-b">
+          <p class="rc-cnt">担当タスク 1件（打ち合わせで決定）</p>
+          <div class="chips">
+            <span class="chip d">D1</span>
+          </div>
+          <p style="margin:12px 0 0;font-size:13px;color:#475467;line-height:1.8">まずはD1（3人打ち合わせ）に入ってもらう。インタビュアーを担うかは、その場で決める。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="openslot rv">
+      <p class="os-t">引き取り手募集（担当・工数が未確定）</p>
+      <p class="os-s">スケジューリング担当が割り当てる想定。ここが空いたままだと、当日になって誰も動けない。</p>
+      <ul>
+        <li><b>E5 岩瀬さん本人のZoomセミナー</b>: やるかどうかが検討段階。回数・日程も未定。<span class="badge chk">要確認</span></li>
+        <li><b>E4 のセールスチーム</b>: 面談を回すメンバーが未定。10月下旬は毎日走る前提。<span class="badge chk">要確認</span></li>
+        <li><b>D1 のインタビュアー役</b>: 磯貝さんに協力要請中。打ち合わせで確定。<span class="badge chk">要確認</span></li>
+        <li><b>C1 のオプチャ運営ルール</b>（組み方の細部）: 打ち合わせで確定。<span class="badge chk">要確認</span></li>
+      </ul>
+    </div>
+    <div class="hr"></div>
+  </div>
+</section>
+</div>
+
+<!-- ========== 11. 直近2週間のネクストアクション ========== -->
+<section class="section" id="s11">
+  <div class="wrap">
+    <div class="chapter rv">
+      <div class="chapter-no">11</div>
+      <div class="chapter-txt">
+        <p class="chapter-kicker">NEXT ACTIONS</p>
+        <h2>直近2週間でやること</h2>
+      </div>
+    </div>
+    <p class="lead rv">9/3会議の宿題に、今回の洗い出しで「前倒しすべき」と分かったものを足した。上から順でいい。<b>方針は早め早めに。</b>上の3つは<b>今週</b>やる。</p>
+
+    <ul class="check rv">
+      <li><span class="box"></span><span><span class="who">的場さん</span>オープンチャットを開設して、コラム配信を始める（C1・C3・C4）<span class="badge now">今週・最優先</span></span></li>
+      <li><span class="box"></span><span><span class="who">岩瀬さん＋的場さん</span>リスト誘導の台本をつくる（A6）<span class="badge now">早急</span></span></li>
+      <li><span class="box"></span><span><span class="who">岩瀬さん＋制作チーム</span>リスト誘導動画をつくって出す（A7）<span class="badge now">早急</span></span></li>
+      <li><span class="box"></span><span><span class="who">岩瀬さん</span>シフトを確認して、空き日を的場さんへLINEする</span></li>
+      <li><span class="box"></span><span><span class="who">的場さん</span>3人打ち合わせの設定（磯貝さんを含む）— これが動画レーンの起点</span></li>
+      <li><span class="box"></span><span><span class="who">3人打ち合わせ</span>インタビュー形式・質問項目・撮影場所・オプチャ運営方針・E5（Zoomセミナーをやるか）の確定</span></li>
+      <li><span class="box"></span><span><span class="who">制作チーム</span>プロライン開設・LINE連携に着手（B1）＋プランの前提を決める</span></li>
+      <li><span class="box"></span><span><span class="who">的場さん</span>オファー内容のたたき台（E1）— E2・E3の前提になる</span></li>
+    </ul>
+
+    <div class="note rv"><b>この8つが終われば、あとは走るだけ。</b>上の3つ（オプチャ・リスト誘導）は待つ理由がないので今週中に。打ち合わせ関連が2週間動かないと、10/17公開は現実的でなくなる。</div>
+    <div style="height:44px"></div>
+  </div>
+</section>
+
+<!-- ========== フッター ========== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="ft">SOURCE &amp; NOTES</p>
+    <p>出典: 2026-09-03 ミーティング文字起こし ＋ 2026-09-12 追加指示 ＋ 裏取り調査（research-2026-09-12.md）。数字・時期の未確定分には【要確認】【概算】【二次情報】のバッジを付した。</p>
+    <p>制作期間の相場値は制作会社の公開解説記事（LOCUS／アートワークス／JPC／トック企画／むびるプラス）。「二次情報」と付した箇所は解説サイト由来で、公式の明記が確認できていない。</p>
+    <p>構成: A（SNSフロント発信・最重要）8＋B（LINE・プロライン）8＋C（オープンチャット）6＋D（動画制作）7＋E（セールス）6 ＝ <b>全35タスク・5ワークストリーム</b>。</p>
+    <p class="strong">この資料は社内共有用。転載・外部共有しない。</p>
+    <p>姉妹資料: ストーリー戦略編 index.html（同じフォルダ）</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  try{
+    if(!('IntersectionObserver' in window)){return;}
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){return;}
+    var els = document.querySelectorAll('.rv');
+    if(!els.length){return;}
+    var root = document.documentElement;
+    root.className += ' rv-on';
+    var showAll = function(){
+      for(var k=0;k<els.length;k++){ els[k].className += ' is-in'; }
+    };
+    var io = new IntersectionObserver(function(entries){
+      for(var i=0;i<entries.length;i++){
+        if(entries[i].isIntersecting){
+          entries[i].target.className += ' is-in';
+          io.unobserve(entries[i].target);
+        }
+      }
+    }, {rootMargin:'0px 0px -6% 0px', threshold:0.02});
+    for(var j=0;j<els.length;j++){ io.observe(els[j]); }
+    /* 保険：5秒後は必ず全部見える状態にする */
+    window.setTimeout(showAll, 5000);
+    window.addEventListener('beforeprint', showAll);
+  }catch(e){
+    document.documentElement.className = document.documentElement.className.replace(' rv-on','');
+  }
+})();
+</script>
+
+</body>
+</html>
