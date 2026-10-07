@@ -283,10 +283,12 @@ h1 { font-size: clamp(30px, 3.5vw, 44px); line-height: 1.45; letter-spacing: -.0
   .reason-left { grid-template-columns: 1fr 1fr; gap: 8px; }
   .reason-left span { font-size: 11px; padding: 10px 8px; }
   .reason-right { font-size: 14px; padding: 12px 14px; }
-  .stairs { gap: 8px; }
-  .stairs div { padding: 12px 8px; }
-  .stairs strong { font-size: 12px; }
-  .stairs small { font-size: 10px; margin-bottom: 8px; }
+  .stairs { grid-template-columns: minmax(0,1fr); gap: 8px; }
+  .stairs div { display: grid; grid-template-columns: 20px 1fr; align-items: center; gap: 12px; padding: 12px; min-height: 0; border-radius: 8px; }
+  .stairs div:nth-child(2) { min-height: 0; margin-left: 12px; }
+  .stairs div:nth-child(3) { min-height: 0; margin-left: 24px; }
+  .stairs strong { font-size: 13px; }
+  .stairs small { font-size: 10px; margin-bottom: 0; }
   .parallel { gap: 8px; }
   .parallel div { padding: 16px 7px; }
   .parallel strong { font-size: 17px; }
@@ -295,6 +297,7 @@ h1 { font-size: clamp(30px, 3.5vw, 44px); line-height: 1.45; letter-spacing: -.0
   .assist div { padding: 18px 10px; }
   .assist strong { font-size: 19px; }
   .assist p { font-size: 11px; }
+  .assist > span { font-size: 16px; line-height: 1; }
   .worries { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
   .support { gap: 18px; }
   .support-center { width: 102px; height: 102px; font-size: 14px; }
